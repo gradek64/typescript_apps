@@ -1,0 +1,5 @@
+//use global installed http-server
+
+//as 
+
+http-server build/ --port 5000

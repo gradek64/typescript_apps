@@ -1,0 +1,35 @@
+body {
+  height: 2000px;
+  overflow: scroll;
+}
+
+form {
+  text-transform: capitalize;
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  input,
+  textarea {
+    border: 1px solid grey;
+  }
+  textarea {
+    height: 200px;
+    width: 200px;
+  }
+  * {
+    margin: 5px;
+  }
+
+  .error {
+    border: 2px solid red;
+  }
+
+  .errorText {
+    color: green;
+  }
+
+  .radioButtons {
+    display: flex;
+    width: 300px;
+  }
+}

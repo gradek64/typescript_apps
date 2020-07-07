@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render correclty with initial state should render and take a snapshot 1`] = `
+<DocumentFragment>
+  <form
+    id="BillingForm"
+  >
+    <label
+      for="surname"
+    >
+      surname
+    </label>
+    <input
+      class=""
+      data-error=""
+      name="surname"
+      type="text"
+      value=""
+    />
+    <label
+      for="name"
+    >
+      name
+    </label>
+    <input
+      class=""
+      data-error=""
+      name="name"
+      type="text"
+      value=""
+    />
+    <label
+      for="paymentMethod"
+    >
+      payment Method
+    </label>
+    <select
+      class=""
+      data-error=""
+      name="paymentMethod"
+    >
+      <option
+        disabled=""
+        selected=""
+        style="color: gray;"
+        value=""
+      >
+        pick a payment method
+      </option>
+      <option
+        value="visa card"
+      >
+        visa card
+      </option>
+      <option
+        value="mastercard"
+      >
+        mastercard
+      </option>
+      <option
+        value="paypal"
+      >
+        paypal
+      </option>
+      <option
+        value="klarna"
+      >
+        klarna
+      </option>
+    </select>
+    <label
+      for="accountNumber"
+    >
+      accountNumber
+    </label>
+    <input
+      class=""
+      data-error=""
+      name="accountNumber"
+      type="number"
+      value=""
+    />
+    <input
+      type="submit"
+      value="submit"
+    />
+  </form>
+</DocumentFragment>
+`;

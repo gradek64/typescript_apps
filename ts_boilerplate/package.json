@@ -1,0 +1,34 @@
+{
+  "name": "vs_code_configuration",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "tsc": "tsc",
+    "tsc-build": "tsc src/*.ts --outDir build/scripts --module CommonJS",
+    "tsc-watch": "tsc src/*.ts --watch  --outDir build/scripts --module CommonJS",
+    "browserify": "browserify build/scripts/index.js -o build/bundle.js",
+    "watchifyMe": "watchify build/scripts/index.js -o build/bundle.js",
+    "tsc-watch-file": "tsc src/$FILE.ts --watch --outDir build/compiledJS/",
+    "compile_and_watch": "npm run tsc-watch & npm run watchifyMe",
+    "dev": "http-server ./build --port 5000",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "browserify": "^16.5.1"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^3.1.0",
+    "@typescript-eslint/parser": "^3.1.0",
+    "eslint": "^7.1.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.3",
+    "prettier": "^2.0.5",
+    "typescript": "^3.9.3",
+    "typescript-eslint": "0.0.1-alpha.0",
+    "watchify": "^3.11.1"
+  }
+}
