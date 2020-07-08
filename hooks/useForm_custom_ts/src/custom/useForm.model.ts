@@ -1,4 +1,4 @@
-export type InputOrTextArea =
+export type InputOrTextAreaEvent =
   | React.FormEvent<HTMLInputElement>
   | React.FormEvent<HTMLTextAreaElement>
   | React.FormEvent<HTMLSelectElement>
@@ -13,7 +13,7 @@ export type UseFormStateReturn = [
       error: string;
     };
   },
-  (event: InputOrTextArea) => void,
-  (event: InputOrTextArea) => void,
-  (event: InputOrTextArea) => void
+  (event: InputOrTextAreaEvent) => void,
+  (event: InputOrTextAreaEvent) => void,
+  (event: InputOrTextAreaEvent) => void
 ];

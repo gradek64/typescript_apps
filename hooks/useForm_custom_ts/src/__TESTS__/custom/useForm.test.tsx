@@ -3,7 +3,6 @@ import { addressFormSchema } from '../../../src/formSchemas/addressFormSchema';
 //custom hook
 import userForm from '../../../src/custom/useForm';
 import * as utilities from '../../../src/custom/useForm.model';
-import { async } from 'validate.js';
 
 const mockDocumentBody = ({ error = '' }: { error?: string } = {}) =>
   (document.body.innerHTML = `
@@ -27,7 +26,7 @@ const customHookFnAgs = {
   submitFn: () => {},
   formSchema: addressFormSchema,
 };
-describe('in renders with address form schema', () => {
+describe('it renders with address form schema', () => {
   afterEach(cleanup);
   it('should return an initial state', () => {
     mockDocumentBody();
@@ -54,12 +53,13 @@ describe('event and methods', () => {
       mockDocumentBody();
       let handleChange = generateHook()[1];
       //pass event
-      const event: any = {
+      type InputOrTextAreaElement = HTMLInputElement | HTMLTextAreaElement;
+      const event: Partial<utilities.InputOrTextAreaEvent> = {
         //persist: jest.fn(),
         target: {
           name: 'surname',
           value: 'test data',
-        },
+        } as InputOrTextAreaElement,
       };
       //any mehtod checked in jest (expect()...)  has to be mocked or spied
       //actual method wont be executed only mocked (original implemnation gone)
@@ -68,7 +68,7 @@ describe('event and methods', () => {
       //when you update hook you need to wrap it in act method
       //if U dont U will get a massive warning but it will pass the test
       act(() => {
-        handleChange(event);
+        handleChange(event as utilities.InputOrTextAreaEvent);
       });
 
       expect(handleChange).toBeCalled();
@@ -81,25 +81,27 @@ describe('event and methods', () => {
       const validateValues = generateHook()[2];
       const formState = generateHook()[0];
       //pass event
-      const event: any = {
-        persist: jest.fn(),
+      type InputOrTextAreaElement = HTMLInputElement | HTMLTextAreaElement;
+      const event: Partial<utilities.InputOrTextAreaEvent> = {
+        persist: () => {},
         target: {
           name: 'name',
           value: 'test',
-        },
+        } as InputOrTextAreaElement,
       };
 
       //validateValues = jest.fn();
       //can not be checked if was called or not cause it would needed to be
       //mocked or spied in this case we need original implementaiton
       act(() => {
-        validateValues(event);
+        validateValues(event as utilities.InputOrTextAreaEvent);
       });
 
       //in formState object some values are updated but still not the one as
       //formState.field.value for some reason (react event.target.value computation pressumly)
       //but formState.field.touched is there
-      expect(formState[event.target.name].touched).toBeTruthy;
+      const { name } = event.target as InputOrTextAreaElement;
+      expect(formState[name].touched).toBeTruthy;
     });
   });
 
@@ -109,17 +111,18 @@ describe('event and methods', () => {
       const handleSubmit = generateHook()[3];
       const formState = generateHook()[0];
       //pass event
-      const event: any = {
+      type InputOrTextAreaElement = HTMLInputElement | HTMLTextAreaElement;
+      const event: Partial<utilities.InputOrTextAreaEvent> = {
         persist: jest.fn(),
         preventDefault: jest.fn(),
-        target: {}, //need for event.target in the handleSubmit handler
+        target: {} as InputOrTextAreaElement, //need for event.target in the handleSubmit handler
       };
 
       //validateValues = jest.fn();
       //can not be checked if was called or not cause it would needed to be
       //mocked or spied in this case we need original implementaiton
       act(() => {
-        handleSubmit(event);
+        handleSubmit(event as utilities.InputOrTextAreaEvent);
       });
 
       Object.keys(formState).forEach((field) => {
@@ -144,13 +147,14 @@ describe('useState', () => {
       formIsSubmited = () => {
         mockDocumentBody();
         const handleSubmit = generateHook()[3];
-        const event: any = {
+        type InputOrTextAreaElement = HTMLInputElement | HTMLTextAreaElement;
+        const event: Partial<utilities.InputOrTextAreaEvent> = {
           persist: jest.fn(),
           preventDefault: jest.fn(),
-          target: {},
+          target: {} as InputOrTextAreaElement,
         };
         act(() => {
-          handleSubmit(event);
+          handleSubmit(event as utilities.InputOrTextAreaEvent);
         });
       };
     });
@@ -168,13 +172,14 @@ describe('useState', () => {
       mockDocumentBody({ error: 'field can not be emty' });
       const handleSubmit = generateHook()[3];
       //submit the form
-      const event: any = {
+      type InputOrTextAreaElement = HTMLInputElement | HTMLTextAreaElement;
+      const event: Partial<utilities.InputOrTextAreaEvent> = {
         persist: jest.fn(),
         preventDefault: jest.fn(),
-        target: {},
+        target: {} as InputOrTextAreaElement,
       };
       act(() => {
-        handleSubmit(event);
+        handleSubmit(event as utilities.InputOrTextAreaEvent);
       });
       expect(scrollMethod).toBeCalled();
     });

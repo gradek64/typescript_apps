@@ -25,7 +25,7 @@ const validateEmptyFields = (fields: IFormSchema) => {
   });
   return fields;
 };
-/* type InputOrTextArea =
+/* type InputOrTextAreaEvent =
   | React.FormEvent<HTMLInputElement>
   | React.FormEvent<HTMLTextAreaElement>
   | React.FormEvent<HTMLSelectElement>; */
@@ -147,7 +147,7 @@ const useForm = (
     return { isok: true };
   };
 
-  const validateValues = (event: utilities.InputOrTextArea) => {
+  const validateValues = (event: utilities.InputOrTextAreaEvent) => {
     const { name, value } = <HTMLInputElement | HTMLTextAreaElement>(
       event.target
     );
