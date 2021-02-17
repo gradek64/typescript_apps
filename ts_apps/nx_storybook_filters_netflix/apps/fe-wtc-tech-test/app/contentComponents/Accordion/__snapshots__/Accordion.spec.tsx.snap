@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render correclty with initial props should render and take a snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="accordion"
+  >
+    <button
+      class="sc-AxjAm iQQOrM accordionHeader "
+    >
+      <span
+        class="accordionTitle"
+      >
+        accordion
+      </span>
+      <span
+        class="sc-AxiKw hxrqyE"
+      />
+    </button>
+    <div
+      class="sc-AxirZ hJFkGx"
+      style="height: 0px;"
+    >
+      content
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`should render correclty with initial props should render and take a snapshot with change of the default props 1`] = `
+<DocumentFragment>
+  <div
+    class="accordion"
+  >
+    <div
+      class="sc-AxirZ hJFkGx"
+    >
+      Content
+      <button
+        class="sc-AxjAm hlGWnD accordionHeader active"
+        disabled=""
+      >
+        <span
+          class="accordionTitle"
+        >
+          See less
+        </span>
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;

@@ -1,0 +1,37 @@
+@import '../../../variables';
+
+.formTask {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+
+  input.text {
+    flex-grow: 1;
+    border-color: transparent;
+    border-radius: 10px 0 0 10px;
+    font-size: 14px;
+    padding: 5px;
+  }
+
+  input[type='submit'] {
+    background-color: #bebed7;
+    border-color: transparent;
+    border-radius: 0 10px 10px 0;
+    padding: 5px;
+  }
+}
+
+@media only screen and (max-width: $mobile) {
+  .formTask {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    input.text,
+    input[type='submit'] {
+      border-radius: 10px;
+      width: 100%;
+      margin: 5px;
+    }
+  }
+}

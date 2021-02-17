@@ -1,0 +1,48 @@
+{
+  "name": "react_web",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.config.js",
+  "scripts": {
+    "dev": "webpack-dev-server --open --hot --mode development",
+    "build": "webpack --mode production",
+    "test": "jest --config=jest.configuration.json"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/jest": "^26.0.4",
+    "@types/react": " 16.9.19",
+    "@types/react-dom": " 16.9.5",
+    "enzyme": "3.10.0",
+    "enzyme-adapter-react-16": "1.7.1",
+    "enzyme-to-json": "3.3.5",
+    "jest": "24.0.0",
+    "jest-css-modules": "2.0.0",
+    "node-sass": "^4.5.3",
+    "react": "16.8.5",
+    "react-dom": "16.8.5"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^3.1.0",
+    "@typescript-eslint/parser": "^3.1.0",
+    "css-loader": "2.1.1",
+    "eslint": "^7.1.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.3",
+    "html-loader": "0.5.5",
+    "html-webpack-plugin": "3.2.0",
+    "prettier": "^2.0.5",
+    "sass-loader": "7.1.0",
+    "style-loader": "0.23.1",
+    "ts-jest": "^26.1.2",
+    "ts-loader": "^7.0.5",
+    "typescript": "^3.9.3",
+    "typescript-eslint": "0.0.1-alpha.0",
+    "url-loader": "2.2.0",
+    "webpack": "4.29.6",
+    "webpack-cli": "3.3.0",
+    "webpack-dev-server": "3.2.1"
+  }
+}

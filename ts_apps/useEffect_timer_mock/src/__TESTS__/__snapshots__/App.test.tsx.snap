@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders App component 1`] = `
+<DocumentFragment>
+  <div>
+    <div
+      class="container"
+    >
+      <div
+        class="images-container"
+      >
+        <img
+          alt="Petra.Dickens"
+          src="https://i.pravatar.cc/300?u=100"
+        />
+      </div>
+      <div
+        class="text-container"
+      >
+        <h4>
+          Petra.Dickens
+        </h4>
+        <p>
+          100. "The impression of his right foot was always less distinct than
+his left. He put less weight upon it. Why? Because he limped--he
+was lame."
+        </p>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`renders learn react link 1`] = `
+<DocumentFragment>
+  <div>
+    <div
+      class="container"
+    >
+      <div
+        class="images-container"
+      >
+        <img
+          alt="Petra.Dickens"
+          src="https://i.pravatar.cc/300?u=100"
+        />
+      </div>
+      <div
+        class="text-container"
+      >
+        <h4>
+          Petra.Dickens
+        </h4>
+        <p>
+          100. "The impression of his right foot was always less distinct than
+his left. He put less weight upon it. Why? Because he limped--he
+was lame."
+        </p>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

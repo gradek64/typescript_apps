@@ -1,0 +1,49 @@
+$textColor: white;
+@import '../../../variables';
+.containerTask {
+  border-radius: 5px;
+  .taskControls {
+    display: flex;
+    align-items: center;
+    background-color: #4f1919;
+    color: $textColor;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 5px;
+    * {
+      margin: 0 5px 0 5px;
+    }
+    textarea {
+      border: none;
+      color: $textColor;
+      margin: 5px;
+      text-align: center;
+      background-color: transparent;
+      text-transform: capitalize;
+      min-width: 200px;
+      resize: none;
+      &.completed {
+        text-decoration: line-through;
+      }
+    }
+    .icons {
+      display: flex;
+    }
+
+    &.completed {
+      background-color: #c36c6c;
+    }
+  }
+}
+
+@media only screen and (max-width: $mobile) {
+  .taskControls {
+    label:first-child {
+      align-self: flex-end;
+    }
+    flex-direction: column;
+  }
+  .icons {
+    justify-content: space-evenly;
+  }
+}

@@ -1,0 +1,14 @@
+{
+    "setupFiles": [
+        "raf/polyfill",
+        "<rootDir>/enzyme.configuration.js"
+    ],
+    "moduleNameMapper":
+    {
+        "^[./a-zA-Z0-9$_-]+\\.(scss|css|jpg|png)$": "<rootDir>/jestMockModule.js"
+    },
+
+    "snapshotSerializers": [
+        "enzyme-to-json/serializer"
+    ]
+}

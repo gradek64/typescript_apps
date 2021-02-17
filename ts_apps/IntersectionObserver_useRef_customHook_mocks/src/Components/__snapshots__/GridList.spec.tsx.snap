@@ -1,0 +1,156 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders component should render list from dataSet prop 1`] = `
+<DocumentFragment>
+  <div
+    class="MuiContainer-root makeStyles-root-1 MuiContainer-maxWidthLg"
+  >
+    <div>
+      <div
+        class="MuiPaper-root MuiCard-root makeStyles-root-3 MuiPaper-elevation1 MuiPaper-rounded"
+      >
+        <button
+          class="MuiButtonBase-root MuiCardActionArea-root"
+          tabindex="0"
+          type="button"
+        >
+          <img
+            alt="Untitled (double studio portrait of older woman wearing corsage and top with light front)"
+            class="MuiCardMedia-root MuiCardMedia-media MuiCardMedia-img"
+            height="140"
+            src="https://nrs.harvard.edu/urn-3:HUAM:INV106713N_dynmc"
+            title="Contemplative Reptile"
+          />
+          <div
+            class="MuiCardContent-root"
+          >
+            <h2
+              class="MuiTypography-root MuiTypography-h5 MuiTypography-gutterBottom"
+            >
+              Untitled (double studio portrait of older woman wearing corsage and top with light front)
+            </h2>
+            <p
+              class="MuiTypography-root MuiTypography-body2 MuiTypography-colorTextSecondary"
+            />
+            <p
+              class="MuiTypography-root MuiTypography-body2 MuiTypography-colorTextSecondary"
+            />
+          </div>
+          <span
+            class="MuiCardActionArea-focusHighlight"
+          />
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </button>
+        <div
+          class="MuiCardActions-root MuiCardActions-spacing"
+        >
+          <button
+            class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-textSizeSmall MuiButton-sizeSmall"
+            tabindex="0"
+            type="button"
+          >
+            <span
+              class="MuiButton-label"
+            >
+              Share
+            </span>
+            <span
+              class="MuiTouchRipple-root"
+            />
+          </button>
+          <button
+            class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-textSizeSmall MuiButton-sizeSmall"
+            tabindex="0"
+            type="button"
+          >
+            <span
+              class="MuiButton-label"
+            >
+              Learn More
+            </span>
+            <span
+              class="MuiTouchRipple-root"
+            />
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      data-ref="ref1"
+    >
+      <div
+        class="MuiPaper-root MuiCard-root makeStyles-root-3 MuiPaper-elevation1 MuiPaper-rounded"
+      >
+        <button
+          class="MuiButtonBase-root MuiCardActionArea-root"
+          tabindex="0"
+          type="button"
+        >
+          <img
+            alt="Untitled (interior of office room and hallway in health institution)"
+            class="MuiCardMedia-root MuiCardMedia-media MuiCardMedia-img"
+            height="140"
+            src="https://nrs.harvard.edu/urn-3:HUAM:INV106826N_dynmc"
+            title="Contemplative Reptile"
+          />
+          <div
+            class="MuiCardContent-root"
+          >
+            <h2
+              class="MuiTypography-root MuiTypography-h5 MuiTypography-gutterBottom"
+            >
+              Untitled (interior of office room and hallway in health institution)
+            </h2>
+            <p
+              class="MuiTypography-root MuiTypography-body2 MuiTypography-colorTextSecondary"
+            />
+            <p
+              class="MuiTypography-root MuiTypography-body2 MuiTypography-colorTextSecondary"
+            />
+          </div>
+          <span
+            class="MuiCardActionArea-focusHighlight"
+          />
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </button>
+        <div
+          class="MuiCardActions-root MuiCardActions-spacing"
+        >
+          <button
+            class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-textSizeSmall MuiButton-sizeSmall"
+            tabindex="0"
+            type="button"
+          >
+            <span
+              class="MuiButton-label"
+            >
+              Share
+            </span>
+            <span
+              class="MuiTouchRipple-root"
+            />
+          </button>
+          <button
+            class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-textSizeSmall MuiButton-sizeSmall"
+            tabindex="0"
+            type="button"
+          >
+            <span
+              class="MuiButton-label"
+            >
+              Learn More
+            </span>
+            <span
+              class="MuiTouchRipple-root"
+            />
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

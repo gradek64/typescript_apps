@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render correclty with initial props should render and take a snapshot 1`] = `
+<DocumentFragment>
+  <label
+    class="container-checkbox"
+  >
+    <input
+      name="watch"
+      type="checkbox"
+    />
+    4
+    <span
+      class="checkmark"
+    />
+  </label>
+</DocumentFragment>
+`;

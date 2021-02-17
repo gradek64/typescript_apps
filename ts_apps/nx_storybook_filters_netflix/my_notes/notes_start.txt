@@ -1,0 +1,10 @@
+api use swager for endpoints 
+http://localhost:3333/api/actors/
+
+star css simple solution 
+https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_cutout_text
+
+
+transparent start html 
+
+https://www.w3schools.com/charsets/ref_utf_symbols.asp

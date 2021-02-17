@@ -1,0 +1,17 @@
+{
+  "roots": ["<rootDir>/src"],
+
+  "transform": {
+    "^.+\\.tsx?$": "ts-jest"
+  },
+
+  "testRegex": "(/__TESTS__/.*|(\\.|/)(test|spec))\\.tsx?$",
+
+  "moduleFileExtensions": ["ts", "tsx", "js", "jsx", "json", "node"],
+  "setupFiles": ["raf/polyfill", "<rootDir>/enzyme.configuration.ts"],
+  "moduleNameMapper": {
+    "^[./a-zA-Z0-9$_-]+\\.(scss|css|jpg|png)$": "<rootDir>/jestMockModule.js"
+  },
+
+  "snapshotSerializers": ["enzyme-to-json/serializer"]
+}

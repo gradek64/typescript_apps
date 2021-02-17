@@ -1,0 +1,18 @@
+{
+  "name": "tasks_in_ts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "tsc-watch-file": "tsc-watch $FILE.ts --outDir ./js --onSuccess \"node ./js/$FILE.js\"",
+    "tsc-watch-file-comment": "run: FILE=customReducerObject npm run tsc-watch-file"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^2.0.7",
+    "tsc-watch": "^4.2.9",
+    "typescript": "^4.1.2"
+  }
+}

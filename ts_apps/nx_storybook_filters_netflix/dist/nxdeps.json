@@ -1,0 +1,2531 @@
+{
+  "projectGraph": {
+    "nodes": {
+      "fe-wtc-tech-test-e2e": {
+        "name": "fe-wtc-tech-test-e2e",
+        "type": "e2e",
+        "data": {
+          "root": "apps/fe-wtc-tech-test-e2e",
+          "sourceRoot": "apps/fe-wtc-tech-test-e2e/src",
+          "projectType": "application",
+          "architect": {
+            "e2e": {
+              "builder": "@nrwl/cypress:cypress",
+              "options": {
+                "cypressConfig": "apps/fe-wtc-tech-test-e2e/cypress.json",
+                "tsConfig": "apps/fe-wtc-tech-test-e2e/tsconfig.e2e.json",
+                "devServerTarget": "fe-wtc-tech-test:serve"
+              },
+              "configurations": {
+                "production": {
+                  "devServerTarget": "fe-wtc-tech-test:serve:production"
+                }
+              }
+            },
+            "lint": {
+              "builder": "@nrwl/linter:lint",
+              "options": {
+                "linter": "eslint",
+                "config": "apps/fe-wtc-tech-test-e2e/.eslintrc",
+                "tsConfig": [
+                  "apps/fe-wtc-tech-test-e2e/tsconfig.e2e.json"
+                ],
+                "exclude": [
+                  "**/node_modules/**",
+                  "!apps/fe-wtc-tech-test-e2e/**"
+                ]
+              }
+            }
+          },
+          "tags": [],
+          "files": [
+            {
+              "file": "apps/fe-wtc-tech-test-e2e/.eslintrc",
+              "ext": "",
+              "mtime": 1596055100968.8154
+            },
+            {
+              "file": "apps/fe-wtc-tech-test-e2e/cypress.json",
+              "ext": ".json",
+              "mtime": 1596055100968.9924
+            },
+            {
+              "file": "apps/fe-wtc-tech-test-e2e/src/fixtures/example.json",
+              "ext": ".json",
+              "mtime": 1596055100969.1643
+            },
+            {
+              "file": "apps/fe-wtc-tech-test-e2e/src/integration/app.spec.ts",
+              "ext": ".ts",
+              "mtime": 1596055100969.294
+            },
+            {
+              "file": "apps/fe-wtc-tech-test-e2e/src/integration/swagger.spec.ts",
+              "ext": ".ts",
+              "mtime": 1596055100969.468
+            },
+            {
+              "file": "apps/fe-wtc-tech-test-e2e/src/plugins/index.js",
+              "ext": ".js",
+              "mtime": 1596055100969.6125
+            },
+            {
+              "file": "apps/fe-wtc-tech-test-e2e/src/support/app.po.ts",
+              "ext": ".ts",
+              "mtime": 1596055100969.8113
+            },
+            {
+              "file": "apps/fe-wtc-tech-test-e2e/src/support/commands.ts",
+              "ext": ".ts",
+              "mtime": 1596055100969.9614
+            },
+            {
+              "file": "apps/fe-wtc-tech-test-e2e/src/support/index.ts",
+              "ext": ".ts",
+              "mtime": 1596055100970.0674
+            },
+            {
+              "file": "apps/fe-wtc-tech-test-e2e/tsconfig.e2e.json",
+              "ext": ".json",
+              "mtime": 1596055100970.1704
+            },
+            {
+              "file": "apps/fe-wtc-tech-test-e2e/tsconfig.json",
+              "ext": ".json",
+              "mtime": 1596055100970.2703
+            }
+          ]
+        }
+      },
+      "fe-wtc-tech-test": {
+        "name": "fe-wtc-tech-test",
+        "type": "app",
+        "data": {
+          "root": "apps/fe-wtc-tech-test",
+          "sourceRoot": "apps/fe-wtc-tech-test",
+          "projectType": "application",
+          "schematics": {},
+          "architect": {
+            "build": {
+              "builder": "@nrwl/next:build",
+              "options": {
+                "root": "apps/fe-wtc-tech-test",
+                "outputPath": "dist/apps/fe-wtc-tech-test"
+              },
+              "configurations": {
+                "production": {}
+              }
+            },
+            "serve": {
+              "builder": "@nrwl/next:server",
+              "options": {
+                "buildTarget": "fe-wtc-tech-test:build",
+                "dev": true,
+                "proxyConfig": "apps/fe-wtc-tech-test/proxy.conf.json"
+              },
+              "configurations": {
+                "production": {
+                  "buildTarget": "fe-wtc-tech-test:build:production",
+                  "dev": false
+                }
+              }
+            },
+            "export": {
+              "builder": "@nrwl/next:export",
+              "options": {
+                "buildTarget": "fe-wtc-tech-test:build:production"
+              }
+            },
+            "lint": {
+              "builder": "@nrwl/linter:lint",
+              "options": {
+                "linter": "eslint",
+                "config": "apps/fe-wtc-tech-test/.eslintrc",
+                "tsConfig": [
+                  "apps/fe-wtc-tech-test/tsconfig.json",
+                  "apps/fe-wtc-tech-test/tsconfig.spec.json"
+                ],
+                "exclude": [
+                  "**/node_modules/**",
+                  "!apps/fe-wtc-tech-test/**"
+                ]
+              }
+            },
+            "test": {
+              "builder": "@nrwl/jest:jest",
+              "options": {
+                "jestConfig": "apps/fe-wtc-tech-test/jest.config.js",
+                "tsConfig": "apps/fe-wtc-tech-test/tsconfig.spec.json",
+                "passWithNoTests": true
+              }
+            }
+          },
+          "tags": [],
+          "files": [
+            {
+              "file": "apps/fe-wtc-tech-test/.babelrc",
+              "ext": "",
+              "mtime": 1596055100970.411
+            },
+            {
+              "file": "apps/fe-wtc-tech-test/.eslintrc",
+              "ext": "",
+              "mtime": 1596055100970.5383
+            },
+            {
+              "file": "apps/fe-wtc-tech-test/app/components/footer/footer.spec.tsx",
+              "ext": ".tsx",
+              "mtime": 1596993236470
+            },
+            {
+              "file": "apps/fe-wtc-tech-test/app/components/footer/index.tsx",
+              "ext": ".tsx",
+              "mtime": 1596055100970.968
+            },
+            {
+              "file": "apps/fe-wtc-tech-test/app/components/header/header.spec.tsx",
+              "ext": ".tsx",
+              "mtime": 1596993230415
+            },
+            {
+              "file": "apps/fe-wtc-tech-test/app/components/header/index.tsx",
+              "ext": ".tsx",
+              "mtime": 1596055100971.2026
+            },
+            {
+              "file": "apps/fe-wtc-tech-test/app/components/logo/index.tsx",
+              "ext": ".tsx",
+              "mtime": 1596055100971.3474
+            },
+            {
+              "file": "apps/fe-wtc-tech-test/app/components/logo/logo.spec.tsx",
+              "ext": ".tsx",
+              "mtime": 1596993222246
+            },
+            {
+              "file": "apps/fe-wtc-tech-test/app/contentComponents/Accordion/Accordion.spec.tsx",
+              "ext": ".tsx",
+              "mtime": 1596992711744
+            },
+            {
+              "file": "apps/fe-wtc-tech-test/app/contentComponents/Accordion/Accordion.tsx",
+              "ext": ".tsx",
+              "mtime": 1596983854322.5674
+            },
+            {
+              "file": "apps/fe-wtc-tech-test/app/contentComponents/Accordion/__snapshots__/Accordion.spec.tsx.snap",
+              "ext": ".snap",
+              "mtime": 1596992729338.4434
+            },
+            {
+              "file": "apps/fe-wtc-tech-test/app/contentComponents/Card/Card.spec.tsx",
+              "ext": ".tsx",
+              "mtime": 1596994432510.628
+            },
+            {
+              "file": "apps/fe-wtc-tech-test/app/contentComponents/Card/Card.tsx",
+              "ext": ".tsx",
+              "mtime": 1610566767039.0493
+            },
+            {
+              "file": "apps/fe-wtc-tech-test/app/contentComponents/Card/CardUtills/calculateAvarageRating.spec.ts",
+              "ext": ".ts",
+              "mtime": 1596994432511.142
+            },
+            {
+              "file": "apps/fe-wtc-tech-test/app/contentComponents/Card/CardUtills/calculateAvarageRating.ts",
+              "ext": ".ts",
+              "mtime": 1596994432511.3418
+            },
+            {
+              "file": "apps/fe-wtc-tech-test/app/contentComponents/Card/IconsStateManagement/IconsStateManagement.spec.tsx",
+              "ext": ".tsx",
+              "mtime": 1596994432511.7632
+            },
+            {
+              "file": "apps/fe-wtc-tech-test/app/contentComponents/Card/IconsStateManagement/IconsStateManagement.tsx",
+              "ext": ".tsx",
+              "mtime": 1610569420469.8943
+            },
+            {
+              "file": "apps/fe-wtc-tech-test/app/contentComponents/Card/IconsStateManagement/__snapshots__/IconsStateManagement.spec.tsx.snap",
+              "ext": ".snap",
+              "mtime": 1596994432512.1821
+            },
+            {
+              "file": "apps/fe-wtc-tech-test/app/contentComponents/Card/__snapshots__/Card.spec.tsx.snap",
+              "ext": ".snap",
+              "mtime": 1596996548502.6047
+            },
+            {
+              "file": "apps/fe-wtc-tech-test/app/contentComponents/FiltersGroup/FiltersGroup.spec.tsx",
+              "ext": ".tsx",
+              "mtime": 1596992666088
+            },
+            {
+              "file": "apps/fe-wtc-tech-test/app/contentComponents/FiltersGroup/FiltersGroup.tsx",
+              "ext": ".tsx",
+              "mtime": 1610314619711.9744
+            },
+            {
+              "file": "apps/fe-wtc-tech-test/app/contentComponents/FiltersGroup/__snapshots__/FiltersGroup.spec.tsx.snap",
+              "ext": ".snap",
+              "mtime": 1596996550339.0276
+            },
+            {
+              "file": "apps/fe-wtc-tech-test/app/contentComponents/FiltersGroup/generateFilters.spec.ts",
+              "ext": ".ts",
+              "mtime": 1596992658000
+            },
+            {
+              "file": "apps/fe-wtc-tech-test/app/contentComponents/FiltersGroup/generateFilters.tsx",
+              "ext": ".tsx",
+              "mtime": 1596980157144.1653
+            },
+            {
+              "file": "apps/fe-wtc-tech-test/app/contentComponents/IconCTA/IconAction.spec.tsx",
+              "ext": ".tsx",
+              "mtime": 1596994432512.6174
+            },
+            {
+              "file": "apps/fe-wtc-tech-test/app/contentComponents/IconCTA/IconAction.tsx",
+              "ext": ".tsx",
+              "mtime": 1596994432512.8225
+            },
+            {
+              "file": "apps/fe-wtc-tech-test/app/contentComponents/IconCTA/__snapshots__/IconAction.spec.tsx.snap",
+              "ext": ".snap",
+              "mtime": 1596994432513.2554
+            },
+            {
+              "file": "apps/fe-wtc-tech-test/app/contentComponents/Input/Input.spec.tsx",
+              "ext": ".tsx",
+              "mtime": 1596992622447
+            },
+            {
+              "file": "apps/fe-wtc-tech-test/app/contentComponents/Input/Input.tsx",
+              "ext": ".tsx",
+              "mtime": 1596989383036.381
+            },
+            {
+              "file": "apps/fe-wtc-tech-test/app/contentComponents/Input/__snapshots__/Input.spec.tsx.snap",
+              "ext": ".snap",
+              "mtime": 1596992732289.8696
+            },
+            {
+              "file": "apps/fe-wtc-tech-test/app/contentComponents/RatingStarComp/Rating.spec.tsx",
+              "ext": ".tsx",
+              "mtime": 1596994432513.6323
+            },
+            {
+              "file": "apps/fe-wtc-tech-test/app/contentComponents/RatingStarComp/Rating.tsx",
+              "ext": ".tsx",
+              "mtime": 1604781626248.5947
+            },
+            {
+              "file": "apps/fe-wtc-tech-test/app/contentComponents/RatingStarComp/RatingStarUtills/ratingCalculation.spec.tsx",
+              "ext": ".tsx",
+              "mtime": 1596994432514.1404
+            },
+            {
+              "file": "apps/fe-wtc-tech-test/app/contentComponents/RatingStarComp/RatingStarUtills/ratingCalculation.tsx",
+              "ext": ".tsx",
+              "mtime": 1596994432514.3179
+            },
+            {
+              "file": "apps/fe-wtc-tech-test/app/contentComponents/RatingStarComp/__snapshots__/Rating.spec.tsx.snap",
+              "ext": ".snap",
+              "mtime": 1596994432514.53
+            },
+            {
+              "file": "apps/fe-wtc-tech-test/app/index.ts",
+              "ext": ".ts",
+              "mtime": 1596055100971.5535
+            },
+            {
+              "file": "apps/fe-wtc-tech-test/app/services/apiService.spec.ts",
+              "ext": ".ts",
+              "mtime": 1596994016066.1865
+            },
+            {
+              "file": "apps/fe-wtc-tech-test/app/services/apiService.ts",
+              "ext": ".ts",
+              "mtime": 1596994016066.5857
+            },
+            {
+              "file": "apps/fe-wtc-tech-test/app/services/utils/ENV.ts",
+              "ext": ".ts",
+              "mtime": 1596994016066.8499
+            },
+            {
+              "file": "apps/fe-wtc-tech-test/app/theme/theme.spec.tsx",
+              "ext": ".tsx",
+              "mtime": 1596993304422
+            },
+            {
+              "file": "apps/fe-wtc-tech-test/app/theme/theme.ts",
+              "ext": ".ts",
+              "mtime": 1596055100971.8887
+            },
+            {
+              "file": "apps/fe-wtc-tech-test/index.d.ts",
+              "ext": ".ts",
+              "mtime": 1596055100971.9934
+            },
+            {
+              "file": "apps/fe-wtc-tech-test/jest.config.js",
+              "ext": ".js",
+              "mtime": 1596383050295.1738
+            },
+            {
+              "file": "apps/fe-wtc-tech-test/next-env.d.ts",
+              "ext": ".ts",
+              "mtime": 1596055100972.2131
+            },
+            {
+              "file": "apps/fe-wtc-tech-test/next.config.js",
+              "ext": ".js",
+              "mtime": 1596055100972.307
+            },
+            {
+              "file": "apps/fe-wtc-tech-test/pages/_app.tsx",
+              "ext": ".tsx",
+              "mtime": 1596055100972.4417
+            },
+            {
+              "file": "apps/fe-wtc-tech-test/pages/_document.tsx",
+              "ext": ".tsx",
+              "mtime": 1596055100972.6003
+            },
+            {
+              "file": "apps/fe-wtc-tech-test/pages/index.spec.tsx",
+              "ext": ".tsx",
+              "mtime": 1596994016078.5603
+            },
+            {
+              "file": "apps/fe-wtc-tech-test/pages/index.tsx",
+              "ext": ".tsx",
+              "mtime": 1596994016078.8235
+            },
+            {
+              "file": "apps/fe-wtc-tech-test/pages/instructions/index.tsx",
+              "ext": ".tsx",
+              "mtime": 1596055100973.0464
+            },
+            {
+              "file": "apps/fe-wtc-tech-test/pages/instructions/instructions.spec.tsx",
+              "ext": ".tsx",
+              "mtime": 1596993292637
+            },
+            {
+              "file": "apps/fe-wtc-tech-test/proxy.conf.json",
+              "ext": ".json",
+              "mtime": 1596055100973.4478
+            },
+            {
+              "file": "apps/fe-wtc-tech-test/public/assets/design/fe_movies_tech_test.pdf",
+              "ext": ".pdf",
+              "mtime": 1596055100992.0786
+            },
+            {
+              "file": "apps/fe-wtc-tech-test/public/assets/design/fe_movies_tech_test.sketch",
+              "ext": ".sketch",
+              "mtime": 1596055101004.9453
+            },
+            {
+              "file": "apps/fe-wtc-tech-test/public/assets/logo/testflix_logo.png",
+              "ext": ".png",
+              "mtime": 1596055101006.1687
+            },
+            {
+              "file": "apps/fe-wtc-tech-test/public/favicon.ico",
+              "ext": ".ico",
+              "mtime": 1596055101006.4446
+            },
+            {
+              "file": "apps/fe-wtc-tech-test/tsconfig.json",
+              "ext": ".json",
+              "mtime": 1596626345683.8535
+            },
+            {
+              "file": "apps/fe-wtc-tech-test/tsconfig.spec.json",
+              "ext": ".json",
+              "mtime": 1596055101006.866
+            }
+          ]
+        }
+      },
+      "ui-e2e": {
+        "name": "ui-e2e",
+        "type": "e2e",
+        "data": {
+          "root": "apps/ui-e2e",
+          "sourceRoot": "apps/ui-e2e/src",
+          "projectType": "application",
+          "architect": {
+            "e2e": {
+              "builder": "@nrwl/cypress:cypress",
+              "options": {
+                "cypressConfig": "apps/ui-e2e/cypress.json",
+                "tsConfig": "apps/ui-e2e/tsconfig.e2e.json",
+                "devServerTarget": "ui:storybook"
+              },
+              "configurations": {
+                "ci": {
+                  "devServerTarget": "ui:storybook:ci"
+                }
+              }
+            },
+            "lint": {
+              "builder": "@nrwl/linter:lint",
+              "options": {
+                "linter": "eslint",
+                "config": "apps/ui-e2e/.eslintrc",
+                "tsConfig": [
+                  "apps/ui-e2e/tsconfig.e2e.json"
+                ],
+                "exclude": [
+                  "**/node_modules/**",
+                  "!apps/ui-e2e/**"
+                ]
+              }
+            }
+          },
+          "tags": [],
+          "files": [
+            {
+              "file": "apps/ui-e2e/.eslintrc",
+              "ext": "",
+              "mtime": 1596055101007.0059
+            },
+            {
+              "file": "apps/ui-e2e/cypress.json",
+              "ext": ".json",
+              "mtime": 1596055101007.1099
+            },
+            {
+              "file": "apps/ui-e2e/src/fixtures/example.json",
+              "ext": ".json",
+              "mtime": 1596055101007.366
+            },
+            {
+              "file": "apps/ui-e2e/src/integration/button/button.spec.ts",
+              "ext": ".ts",
+              "mtime": 1596055101007.5696
+            },
+            {
+              "file": "apps/ui-e2e/src/integration/buttonLink/buttonLink.spec.ts",
+              "ext": ".ts",
+              "mtime": 1596055101007.72
+            },
+            {
+              "file": "apps/ui-e2e/src/integration/grid/grid.spec.ts",
+              "ext": ".ts",
+              "mtime": 1596055101007.847
+            },
+            {
+              "file": "apps/ui-e2e/src/integration/index/index.spec.ts",
+              "ext": ".ts",
+              "mtime": 1596055101007.9746
+            },
+            {
+              "file": "apps/ui-e2e/src/plugins/index.js",
+              "ext": ".js",
+              "mtime": 1596055101008.17
+            },
+            {
+              "file": "apps/ui-e2e/src/support/commands.ts",
+              "ext": ".ts",
+              "mtime": 1596055101008.4045
+            },
+            {
+              "file": "apps/ui-e2e/src/support/index.ts",
+              "ext": ".ts",
+              "mtime": 1596055101008.6934
+            },
+            {
+              "file": "apps/ui-e2e/tsconfig.e2e.json",
+              "ext": ".json",
+              "mtime": 1596055101008.9114
+            },
+            {
+              "file": "apps/ui-e2e/tsconfig.json",
+              "ext": ".json",
+              "mtime": 1596055101009.1465
+            }
+          ]
+        }
+      },
+      "api": {
+        "name": "api",
+        "type": "app",
+        "data": {
+          "root": "apps/api",
+          "sourceRoot": "apps/api/src",
+          "projectType": "application",
+          "prefix": "api",
+          "schematics": {},
+          "architect": {
+            "build": {
+              "builder": "@nrwl/node:build",
+              "options": {
+                "outputPath": "dist/apps/api",
+                "main": "apps/api/src/main.ts",
+                "tsConfig": "apps/api/tsconfig.app.json",
+                "assets": [
+                  "apps/api/src/assets"
+                ]
+              },
+              "configurations": {
+                "production": {
+                  "optimization": true,
+                  "extractLicenses": true,
+                  "inspect": false,
+                  "fileReplacements": [
+                    {
+                      "replace": "apps/api/src/environments/environment.ts",
+                      "with": "apps/api/src/environments/environment.prod.ts"
+                    }
+                  ]
+                }
+              }
+            },
+            "serve": {
+              "builder": "@nrwl/node:execute",
+              "options": {
+                "buildTarget": "api:build"
+              }
+            },
+            "lint": {
+              "builder": "@nrwl/linter:lint",
+              "options": {
+                "linter": "eslint",
+                "config": "apps/api/.eslintrc",
+                "tsConfig": [
+                  "apps/api/tsconfig.app.json",
+                  "apps/api/tsconfig.spec.json"
+                ],
+                "exclude": [
+                  "**/node_modules/**",
+                  "!apps/api/**"
+                ]
+              }
+            },
+            "test": {
+              "builder": "@nrwl/jest:jest",
+              "options": {
+                "jestConfig": "apps/api/jest.config.js",
+                "tsConfig": "apps/api/tsconfig.spec.json",
+                "passWithNoTests": true
+              }
+            }
+          },
+          "tags": [],
+          "files": [
+            {
+              "file": "apps/api/.eslintrc",
+              "ext": "",
+              "mtime": 1596055100962.9229
+            },
+            {
+              "file": "apps/api/jest.config.js",
+              "ext": ".js",
+              "mtime": 1596055100963.1008
+            },
+            {
+              "file": "apps/api/src/app/routes/actors/actors.spec.ts",
+              "ext": ".ts",
+              "mtime": 1596055100963.543
+            },
+            {
+              "file": "apps/api/src/app/routes/actors/index.ts",
+              "ext": ".ts",
+              "mtime": 1596055100963.689
+            },
+            {
+              "file": "apps/api/src/app/routes/directors/directors.spec.ts",
+              "ext": ".ts",
+              "mtime": 1596055100963.841
+            },
+            {
+              "file": "apps/api/src/app/routes/directors/index.ts",
+              "ext": ".ts",
+              "mtime": 1596055100963.9453
+            },
+            {
+              "file": "apps/api/src/app/routes/facetView/facetActors/facetActors.spec.ts",
+              "ext": ".ts",
+              "mtime": 1596055100964.2993
+            },
+            {
+              "file": "apps/api/src/app/routes/facetView/facetActors/index.ts",
+              "ext": ".ts",
+              "mtime": 1596055100964.4375
+            },
+            {
+              "file": "apps/api/src/app/routes/facetView/facetDirectors/facetDirectors.spec.ts",
+              "ext": ".ts",
+              "mtime": 1596055100964.611
+            },
+            {
+              "file": "apps/api/src/app/routes/facetView/facetDirectors/index.ts",
+              "ext": ".ts",
+              "mtime": 1596055100964.6982
+            },
+            {
+              "file": "apps/api/src/app/routes/facetView/facetMovies/facetMovies.spec.ts",
+              "ext": ".ts",
+              "mtime": 1596055100964.8433
+            },
+            {
+              "file": "apps/api/src/app/routes/facetView/facetMovies/index.ts",
+              "ext": ".ts",
+              "mtime": 1596055100964.9595
+            },
+            {
+              "file": "apps/api/src/app/routes/facetView/facetView.spec.ts",
+              "ext": ".ts",
+              "mtime": 1596055100965.073
+            },
+            {
+              "file": "apps/api/src/app/routes/facetView/index.ts",
+              "ext": ".ts",
+              "mtime": 1596055100965.1958
+            },
+            {
+              "file": "apps/api/src/app/routes/facetView/utils/index.ts",
+              "ext": ".ts",
+              "mtime": 1596055100965.466
+            },
+            {
+              "file": "apps/api/src/app/routes/index.ts",
+              "ext": ".ts",
+              "mtime": 1596055100965.5718
+            },
+            {
+              "file": "apps/api/src/app/routes/movies/index.ts",
+              "ext": ".ts",
+              "mtime": 1596055100965.7476
+            },
+            {
+              "file": "apps/api/src/app/routes/movies/movies.spec.ts",
+              "ext": ".ts",
+              "mtime": 1596055100966.03
+            },
+            {
+              "file": "apps/api/src/assets/.gitkeep",
+              "ext": "",
+              "mtime": 1596055100966.1501
+            },
+            {
+              "file": "apps/api/src/assets/list.ts",
+              "ext": ".ts",
+              "mtime": 1596055100966.3313
+            },
+            {
+              "file": "apps/api/src/constants.ts",
+              "ext": ".ts",
+              "mtime": 1596055100966.4758
+            },
+            {
+              "file": "apps/api/src/environments/environment.prod.ts",
+              "ext": ".ts",
+              "mtime": 1596055100966.6606
+            },
+            {
+              "file": "apps/api/src/environments/environment.ts",
+              "ext": ".ts",
+              "mtime": 1596055100966.7988
+            },
+            {
+              "file": "apps/api/src/main.ts",
+              "ext": ".ts",
+              "mtime": 1610307179006.2415
+            },
+            {
+              "file": "apps/api/src/utils/.gitkeep",
+              "ext": "",
+              "mtime": 1596055100967.0703
+            },
+            {
+              "file": "apps/api/src/utils/convertStrToArr/index.ts",
+              "ext": ".ts",
+              "mtime": 1596055100967.1565
+            },
+            {
+              "file": "apps/api/src/utils/filterEmptyString/filterEmptyString.spec.ts",
+              "ext": ".ts",
+              "mtime": 1596055100967.278
+            },
+            {
+              "file": "apps/api/src/utils/filterEmptyString/index.ts",
+              "ext": ".ts",
+              "mtime": 1596055100967.3735
+            },
+            {
+              "file": "apps/api/src/utils/getMapOf/getMapOf.spec.ts",
+              "ext": ".ts",
+              "mtime": 1596055100967.732
+            },
+            {
+              "file": "apps/api/src/utils/getMapOf/index.ts",
+              "ext": ".ts",
+              "mtime": 1596055100967.8936
+            },
+            {
+              "file": "apps/api/src/utils/index.ts",
+              "ext": ".ts",
+              "mtime": 1596055100967.985
+            },
+            {
+              "file": "apps/api/src/utils/transformMapIntoArrayOf/index.ts",
+              "ext": ".ts",
+              "mtime": 1596055100968.121
+            },
+            {
+              "file": "apps/api/src/utils/transformMapIntoArrayOf/transformMapIntoArrayOf.spec.ts",
+              "ext": ".ts",
+              "mtime": 1596055100968.223
+            },
+            {
+              "file": "apps/api/tsconfig.app.json",
+              "ext": ".json",
+              "mtime": 1596055100968.3186
+            },
+            {
+              "file": "apps/api/tsconfig.json",
+              "ext": ".json",
+              "mtime": 1596055100968.452
+            },
+            {
+              "file": "apps/api/tsconfig.spec.json",
+              "ext": ".json",
+              "mtime": 1596055100968.5723
+            }
+          ]
+        }
+      },
+      "ui": {
+        "name": "ui",
+        "type": "lib",
+        "data": {
+          "root": "libs/ui",
+          "sourceRoot": "libs/ui/src",
+          "projectType": "library",
+          "schematics": {},
+          "architect": {
+            "lint": {
+              "builder": "@nrwl/linter:lint",
+              "options": {
+                "linter": "eslint",
+                "config": "libs/ui/.eslintrc",
+                "tsConfig": [
+                  "libs/ui/tsconfig.lib.json",
+                  "libs/ui/tsconfig.spec.json"
+                ],
+                "exclude": [
+                  "**/node_modules/**",
+                  "!libs/ui/**"
+                ]
+              }
+            },
+            "test": {
+              "builder": "@nrwl/jest:jest",
+              "options": {
+                "jestConfig": "libs/ui/jest.config.js",
+                "tsConfig": "libs/ui/tsconfig.spec.json",
+                "passWithNoTests": true
+              }
+            },
+            "storybook": {
+              "builder": "@nrwl/storybook:storybook",
+              "options": {
+                "uiFramework": "@storybook/react",
+                "port": 4400,
+                "config": {
+                  "configFolder": "libs/ui/.storybook"
+                }
+              },
+              "configurations": {
+                "ci": {
+                  "quiet": true
+                }
+              }
+            },
+            "build-storybook": {
+              "builder": "@nrwl/storybook:build",
+              "options": {
+                "uiFramework": "@storybook/react",
+                "outputPath": "dist/storybook/ui",
+                "config": {
+                  "configFolder": "libs/ui/.storybook"
+                }
+              },
+              "configurations": {
+                "ci": {
+                  "quiet": true
+                }
+              }
+            }
+          },
+          "tags": [],
+          "files": [
+            {
+              "file": "libs/ui/.eslintrc",
+              "ext": "",
+              "mtime": 1596055101009.5637
+            },
+            {
+              "file": "libs/ui/.storybook/addons.js",
+              "ext": ".js",
+              "mtime": 1596055101009.7842
+            },
+            {
+              "file": "libs/ui/.storybook/config.js",
+              "ext": ".js",
+              "mtime": 1596055101009.9316
+            },
+            {
+              "file": "libs/ui/.storybook/tsconfig.json",
+              "ext": ".json",
+              "mtime": 1596055101010.071
+            },
+            {
+              "file": "libs/ui/.storybook/webpack.config.js",
+              "ext": ".js",
+              "mtime": 1596055101010.1963
+            },
+            {
+              "file": "libs/ui/README.md",
+              "ext": ".md",
+              "mtime": 1596055101010.3362
+            },
+            {
+              "file": "libs/ui/jest.config.js",
+              "ext": ".js",
+              "mtime": 1596055101010.4353
+            },
+            {
+              "file": "libs/ui/src/index.ts",
+              "ext": ".ts",
+              "mtime": 1596055101010.6052
+            },
+            {
+              "file": "libs/ui/src/lib/Counter/counter.spec.tsx",
+              "ext": ".tsx",
+              "mtime": 1596055101010.938
+            },
+            {
+              "file": "libs/ui/src/lib/Counter/counter.stories.tsx",
+              "ext": ".tsx",
+              "mtime": 1596055101011.0508
+            },
+            {
+              "file": "libs/ui/src/lib/Counter/counter.tsx",
+              "ext": ".tsx",
+              "mtime": 1596055101011.1743
+            },
+            {
+              "file": "libs/ui/src/lib/button/button.spec.tsx",
+              "ext": ".tsx",
+              "mtime": 1596055101011.3613
+            },
+            {
+              "file": "libs/ui/src/lib/button/button.stories.tsx",
+              "ext": ".tsx",
+              "mtime": 1596055101011.4998
+            },
+            {
+              "file": "libs/ui/src/lib/button/button.tsx",
+              "ext": ".tsx",
+              "mtime": 1596055101011.5977
+            },
+            {
+              "file": "libs/ui/src/lib/buttonLink/buttonLink.spec.tsx",
+              "ext": ".tsx",
+              "mtime": 1596055101011.823
+            },
+            {
+              "file": "libs/ui/src/lib/buttonLink/buttonLink.stories.tsx",
+              "ext": ".tsx",
+              "mtime": 1596055101012.0342
+            },
+            {
+              "file": "libs/ui/src/lib/buttonLink/buttonLink.tsx",
+              "ext": ".tsx",
+              "mtime": 1596055101012.1804
+            },
+            {
+              "file": "libs/ui/src/lib/detailsBox/detailsBox.spec.tsx",
+              "ext": ".tsx",
+              "mtime": 1596055101012.356
+            },
+            {
+              "file": "libs/ui/src/lib/detailsBox/index.stories.tsx",
+              "ext": ".tsx",
+              "mtime": 1596055101012.4854
+            },
+            {
+              "file": "libs/ui/src/lib/detailsBox/index.tsx",
+              "ext": ".tsx",
+              "mtime": 1596055101012.6257
+            },
+            {
+              "file": "libs/ui/src/lib/grid/grid.spec.tsx",
+              "ext": ".tsx",
+              "mtime": 1596055101012.7815
+            },
+            {
+              "file": "libs/ui/src/lib/grid/grid.stories.tsx",
+              "ext": ".tsx",
+              "mtime": 1596055101012.9004
+            },
+            {
+              "file": "libs/ui/src/lib/grid/grid.tsx",
+              "ext": ".tsx",
+              "mtime": 1596055101013.0137
+            },
+            {
+              "file": "libs/ui/src/lib/icons/icons.spec.tsx",
+              "ext": ".tsx",
+              "mtime": 1596055101013.1611
+            },
+            {
+              "file": "libs/ui/src/lib/icons/icons.tsx",
+              "ext": ".tsx",
+              "mtime": 1596055101013.2654
+            },
+            {
+              "file": "libs/ui/src/lib/progress/progress.spec.tsx",
+              "ext": ".tsx",
+              "mtime": 1596055101013.403
+            },
+            {
+              "file": "libs/ui/src/lib/progress/progress.tsx",
+              "ext": ".tsx",
+              "mtime": 1596055101013.5115
+            },
+            {
+              "file": "libs/ui/tsconfig.json",
+              "ext": ".json",
+              "mtime": 1596055101013.6074
+            },
+            {
+              "file": "libs/ui/tsconfig.lib.json",
+              "ext": ".json",
+              "mtime": 1596055101013.6934
+            },
+            {
+              "file": "libs/ui/tsconfig.spec.json",
+              "ext": ".json",
+              "mtime": 1596055101013.7817
+            }
+          ]
+        }
+      },
+      "@material-ui/icons": {
+        "type": "npm",
+        "name": "@material-ui/icons",
+        "data": {
+          "version": "4.9.1",
+          "files": []
+        }
+      },
+      "@zeit/next-css": {
+        "type": "npm",
+        "name": "@zeit/next-css",
+        "data": {
+          "version": "1.0.1",
+          "files": []
+        }
+      },
+      "babel-plugin-styled-components": {
+        "type": "npm",
+        "name": "babel-plugin-styled-components",
+        "data": {
+          "version": "^1.11.0",
+          "files": []
+        }
+      },
+      "body-parser": {
+        "type": "npm",
+        "name": "body-parser",
+        "data": {
+          "version": "1.19.0",
+          "files": []
+        }
+      },
+      "colors": {
+        "type": "npm",
+        "name": "colors",
+        "data": {
+          "version": "1.4.0",
+          "files": []
+        }
+      },
+      "document-register-element": {
+        "type": "npm",
+        "name": "document-register-element",
+        "data": {
+          "version": "1.13.1",
+          "files": []
+        }
+      },
+      "express": {
+        "type": "npm",
+        "name": "express",
+        "data": {
+          "version": "4.17.1",
+          "files": []
+        }
+      },
+      "figlet": {
+        "type": "npm",
+        "name": "figlet",
+        "data": {
+          "version": "1.4.0",
+          "files": []
+        }
+      },
+      "helmet": {
+        "type": "npm",
+        "name": "helmet",
+        "data": {
+          "version": "3.22.0",
+          "files": []
+        }
+      },
+      "lodash.upperfirst": {
+        "type": "npm",
+        "name": "lodash.upperfirst",
+        "data": {
+          "version": "4.3.1",
+          "files": []
+        }
+      },
+      "morgan": {
+        "type": "npm",
+        "name": "morgan",
+        "data": {
+          "version": "1.10.0",
+          "files": []
+        }
+      },
+      "next": {
+        "type": "npm",
+        "name": "next",
+        "data": {
+          "version": "9.3.3",
+          "files": []
+        }
+      },
+      "open": {
+        "type": "npm",
+        "name": "open",
+        "data": {
+          "version": "7.0.4",
+          "files": []
+        }
+      },
+      "react": {
+        "type": "npm",
+        "name": "react",
+        "data": {
+          "version": "16.12.0",
+          "files": []
+        }
+      },
+      "react-dom": {
+        "type": "npm",
+        "name": "react-dom",
+        "data": {
+          "version": "16.12.0",
+          "files": []
+        }
+      },
+      "shelljs": {
+        "type": "npm",
+        "name": "shelljs",
+        "data": {
+          "version": "0.8.4",
+          "files": []
+        }
+      },
+      "styled-components": {
+        "type": "npm",
+        "name": "styled-components",
+        "data": {
+          "version": "^5.0.1",
+          "files": []
+        }
+      },
+      "validate.js": {
+        "type": "npm",
+        "name": "validate.js",
+        "data": {
+          "version": "0.13.1",
+          "files": []
+        }
+      },
+      "@babel/core": {
+        "type": "npm",
+        "name": "@babel/core",
+        "data": {
+          "version": "7.9.6",
+          "files": []
+        }
+      },
+      "@babel/preset-typescript": {
+        "type": "npm",
+        "name": "@babel/preset-typescript",
+        "data": {
+          "version": "7.9.0",
+          "files": []
+        }
+      },
+      "@material-ui/core": {
+        "type": "npm",
+        "name": "@material-ui/core",
+        "data": {
+          "version": "4.9.14",
+          "files": []
+        }
+      },
+      "@nrwl/cypress": {
+        "type": "npm",
+        "name": "@nrwl/cypress",
+        "data": {
+          "version": "9.3.0",
+          "files": []
+        }
+      },
+      "@nrwl/eslint-plugin-nx": {
+        "type": "npm",
+        "name": "@nrwl/eslint-plugin-nx",
+        "data": {
+          "version": "9.3.0",
+          "files": []
+        }
+      },
+      "@nrwl/express": {
+        "type": "npm",
+        "name": "@nrwl/express",
+        "data": {
+          "version": "9.3.0",
+          "files": []
+        }
+      },
+      "@nrwl/jest": {
+        "type": "npm",
+        "name": "@nrwl/jest",
+        "data": {
+          "version": "9.3.0",
+          "files": []
+        }
+      },
+      "@nrwl/next": {
+        "type": "npm",
+        "name": "@nrwl/next",
+        "data": {
+          "version": "9.3.0",
+          "files": []
+        }
+      },
+      "@nrwl/node": {
+        "type": "npm",
+        "name": "@nrwl/node",
+        "data": {
+          "version": "9.3.0",
+          "files": []
+        }
+      },
+      "@nrwl/react": {
+        "type": "npm",
+        "name": "@nrwl/react",
+        "data": {
+          "version": "9.3.0",
+          "files": []
+        }
+      },
+      "@nrwl/storybook": {
+        "type": "npm",
+        "name": "@nrwl/storybook",
+        "data": {
+          "version": "9.4.5",
+          "files": []
+        }
+      },
+      "@nrwl/web": {
+        "type": "npm",
+        "name": "@nrwl/web",
+        "data": {
+          "version": "9.3.0",
+          "files": []
+        }
+      },
+      "@nrwl/workspace": {
+        "type": "npm",
+        "name": "@nrwl/workspace",
+        "data": {
+          "version": "9.3.0",
+          "files": []
+        }
+      },
+      "@storybook/addon-knobs": {
+        "type": "npm",
+        "name": "@storybook/addon-knobs",
+        "data": {
+          "version": "5.3.9",
+          "files": []
+        }
+      },
+      "@storybook/react": {
+        "type": "npm",
+        "name": "@storybook/react",
+        "data": {
+          "version": "5.3.9",
+          "files": []
+        }
+      },
+      "@testing-library/jest-dom": {
+        "type": "npm",
+        "name": "@testing-library/jest-dom",
+        "data": {
+          "version": "^5.11.2",
+          "files": []
+        }
+      },
+      "@testing-library/react": {
+        "type": "npm",
+        "name": "@testing-library/react",
+        "data": {
+          "version": "10.2.1",
+          "files": []
+        }
+      },
+      "@types/express": {
+        "type": "npm",
+        "name": "@types/express",
+        "data": {
+          "version": "4.17.0",
+          "files": []
+        }
+      },
+      "@types/jest": {
+        "type": "npm",
+        "name": "@types/jest",
+        "data": {
+          "version": "26.0.0",
+          "files": []
+        }
+      },
+      "@types/node": {
+        "type": "npm",
+        "name": "@types/node",
+        "data": {
+          "version": "~8.9.4",
+          "files": []
+        }
+      },
+      "@types/react": {
+        "type": "npm",
+        "name": "@types/react",
+        "data": {
+          "version": "16.9.17",
+          "files": []
+        }
+      },
+      "@types/react-dom": {
+        "type": "npm",
+        "name": "@types/react-dom",
+        "data": {
+          "version": "16.9.4",
+          "files": []
+        }
+      },
+      "@types/styled-components": {
+        "type": "npm",
+        "name": "@types/styled-components",
+        "data": {
+          "version": "^5.0.1",
+          "files": []
+        }
+      },
+      "@typescript-eslint/eslint-plugin": {
+        "type": "npm",
+        "name": "@typescript-eslint/eslint-plugin",
+        "data": {
+          "version": "2.19.2",
+          "files": []
+        }
+      },
+      "@typescript-eslint/parser": {
+        "type": "npm",
+        "name": "@typescript-eslint/parser",
+        "data": {
+          "version": "2.19.2",
+          "files": []
+        }
+      },
+      "babel-loader": {
+        "type": "npm",
+        "name": "babel-loader",
+        "data": {
+          "version": "8.1.0",
+          "files": []
+        }
+      },
+      "cypress": {
+        "type": "npm",
+        "name": "cypress",
+        "data": {
+          "version": "^4.1.0",
+          "files": []
+        }
+      },
+      "dotenv": {
+        "type": "npm",
+        "name": "dotenv",
+        "data": {
+          "version": "6.2.0",
+          "files": []
+        }
+      },
+      "eslint": {
+        "type": "npm",
+        "name": "eslint",
+        "data": {
+          "version": "6.8.0",
+          "files": []
+        }
+      },
+      "eslint-config-prettier": {
+        "type": "npm",
+        "name": "eslint-config-prettier",
+        "data": {
+          "version": "6.0.0",
+          "files": []
+        }
+      },
+      "eslint-plugin-import": {
+        "type": "npm",
+        "name": "eslint-plugin-import",
+        "data": {
+          "version": "2.19.1",
+          "files": []
+        }
+      },
+      "eslint-plugin-jsx-a11y": {
+        "type": "npm",
+        "name": "eslint-plugin-jsx-a11y",
+        "data": {
+          "version": "6.2.3",
+          "files": []
+        }
+      },
+      "eslint-plugin-react": {
+        "type": "npm",
+        "name": "eslint-plugin-react",
+        "data": {
+          "version": "7.17.0",
+          "files": []
+        }
+      },
+      "eslint-plugin-react-hooks": {
+        "type": "npm",
+        "name": "eslint-plugin-react-hooks",
+        "data": {
+          "version": "2.3.0",
+          "files": []
+        }
+      },
+      "is-port-reachable": {
+        "type": "npm",
+        "name": "is-port-reachable",
+        "data": {
+          "version": "3.0.0",
+          "files": []
+        }
+      },
+      "jest": {
+        "type": "npm",
+        "name": "jest",
+        "data": {
+          "version": "26.0.1",
+          "files": []
+        }
+      },
+      "kill-port": {
+        "type": "npm",
+        "name": "kill-port",
+        "data": {
+          "version": "1.6.0",
+          "files": []
+        }
+      },
+      "npm-run-all": {
+        "type": "npm",
+        "name": "npm-run-all",
+        "data": {
+          "version": "4.1.5",
+          "files": []
+        }
+      },
+      "prettier": {
+        "type": "npm",
+        "name": "prettier",
+        "data": {
+          "version": "2.0.5",
+          "files": []
+        }
+      },
+      "slug": {
+        "type": "npm",
+        "name": "slug",
+        "data": {
+          "version": "3.0.1",
+          "files": []
+        }
+      },
+      "supertest": {
+        "type": "npm",
+        "name": "supertest",
+        "data": {
+          "version": "4.0.2",
+          "files": []
+        }
+      },
+      "swagger-jsdoc": {
+        "type": "npm",
+        "name": "swagger-jsdoc",
+        "data": {
+          "version": "4.0.0",
+          "files": []
+        }
+      },
+      "swagger-ui-express": {
+        "type": "npm",
+        "name": "swagger-ui-express",
+        "data": {
+          "version": "4.1.4",
+          "files": []
+        }
+      },
+      "ts-jest": {
+        "type": "npm",
+        "name": "ts-jest",
+        "data": {
+          "version": "26.1.0",
+          "files": []
+        }
+      },
+      "ts-node": {
+        "type": "npm",
+        "name": "ts-node",
+        "data": {
+          "version": "~7.0.0",
+          "files": []
+        }
+      },
+      "tslint": {
+        "type": "npm",
+        "name": "tslint",
+        "data": {
+          "version": "~6.0.0",
+          "files": []
+        }
+      },
+      "typescript": {
+        "type": "npm",
+        "name": "typescript",
+        "data": {
+          "version": "~3.8.3",
+          "files": []
+        }
+      },
+      "wait-on": {
+        "type": "npm",
+        "name": "wait-on",
+        "data": {
+          "version": "5.0.1",
+          "files": []
+        }
+      }
+    },
+    "dependencies": {
+      "fe-wtc-tech-test-e2e": [
+        {
+          "type": "implicit",
+          "source": "fe-wtc-tech-test-e2e",
+          "target": "fe-wtc-tech-test"
+        },
+        {
+          "type": "static",
+          "source": "fe-wtc-tech-test-e2e",
+          "target": "@nrwl/cypress"
+        }
+      ],
+      "fe-wtc-tech-test": [
+        {
+          "type": "static",
+          "source": "fe-wtc-tech-test",
+          "target": "ui"
+        },
+        {
+          "type": "static",
+          "source": "fe-wtc-tech-test",
+          "target": "react"
+        },
+        {
+          "type": "static",
+          "source": "fe-wtc-tech-test",
+          "target": "@testing-library/react"
+        },
+        {
+          "type": "static",
+          "source": "fe-wtc-tech-test",
+          "target": "@material-ui/core"
+        },
+        {
+          "type": "static",
+          "source": "fe-wtc-tech-test",
+          "target": "@testing-library/jest-dom"
+        },
+        {
+          "type": "static",
+          "source": "fe-wtc-tech-test",
+          "target": "styled-components"
+        },
+        {
+          "type": "static",
+          "source": "fe-wtc-tech-test",
+          "target": "@material-ui/icons"
+        },
+        {
+          "type": "static",
+          "source": "fe-wtc-tech-test",
+          "target": "react-dom"
+        },
+        {
+          "type": "static",
+          "source": "fe-wtc-tech-test",
+          "target": "@zeit/next-css"
+        },
+        {
+          "type": "static",
+          "source": "fe-wtc-tech-test",
+          "target": "next"
+        }
+      ],
+      "ui-e2e": [
+        {
+          "type": "implicit",
+          "source": "ui-e2e",
+          "target": "ui"
+        },
+        {
+          "type": "static",
+          "source": "ui-e2e",
+          "target": "@nrwl/cypress"
+        }
+      ],
+      "api": [
+        {
+          "type": "static",
+          "source": "api",
+          "target": "supertest"
+        },
+        {
+          "type": "static",
+          "source": "api",
+          "target": "express"
+        },
+        {
+          "type": "static",
+          "source": "api",
+          "target": "validate.js"
+        },
+        {
+          "type": "static",
+          "source": "api",
+          "target": "lodash.upperfirst"
+        },
+        {
+          "type": "static",
+          "source": "api",
+          "target": "body-parser"
+        },
+        {
+          "type": "static",
+          "source": "api",
+          "target": "swagger-ui-express"
+        },
+        {
+          "type": "static",
+          "source": "api",
+          "target": "swagger-jsdoc"
+        },
+        {
+          "type": "static",
+          "source": "api",
+          "target": "helmet"
+        },
+        {
+          "type": "static",
+          "source": "api",
+          "target": "morgan"
+        }
+      ],
+      "ui": [
+        {
+          "type": "static",
+          "source": "ui",
+          "target": "@storybook/react"
+        },
+        {
+          "type": "static",
+          "source": "ui",
+          "target": "@storybook/addon-knobs"
+        },
+        {
+          "type": "static",
+          "source": "ui",
+          "target": "react"
+        },
+        {
+          "type": "static",
+          "source": "ui",
+          "target": "@testing-library/react"
+        },
+        {
+          "type": "static",
+          "source": "ui",
+          "target": "@material-ui/core"
+        },
+        {
+          "type": "static",
+          "source": "ui",
+          "target": "next"
+        },
+        {
+          "type": "static",
+          "source": "ui",
+          "target": "@material-ui/icons"
+        }
+      ],
+      "@material-ui/icons": [],
+      "@zeit/next-css": [],
+      "babel-plugin-styled-components": [],
+      "body-parser": [],
+      "colors": [],
+      "document-register-element": [],
+      "express": [],
+      "figlet": [],
+      "helmet": [],
+      "lodash.upperfirst": [],
+      "morgan": [],
+      "next": [],
+      "open": [],
+      "react": [],
+      "react-dom": [],
+      "shelljs": [],
+      "styled-components": [],
+      "validate.js": [],
+      "@babel/core": [],
+      "@babel/preset-typescript": [],
+      "@material-ui/core": [],
+      "@nrwl/cypress": [],
+      "@nrwl/eslint-plugin-nx": [],
+      "@nrwl/express": [],
+      "@nrwl/jest": [],
+      "@nrwl/next": [],
+      "@nrwl/node": [],
+      "@nrwl/react": [],
+      "@nrwl/storybook": [],
+      "@nrwl/web": [],
+      "@nrwl/workspace": [],
+      "@storybook/addon-knobs": [],
+      "@storybook/react": [],
+      "@testing-library/jest-dom": [],
+      "@testing-library/react": [],
+      "@types/express": [],
+      "@types/jest": [],
+      "@types/node": [],
+      "@types/react": [],
+      "@types/react-dom": [],
+      "@types/styled-components": [],
+      "@typescript-eslint/eslint-plugin": [],
+      "@typescript-eslint/parser": [],
+      "babel-loader": [],
+      "cypress": [],
+      "dotenv": [],
+      "eslint": [],
+      "eslint-config-prettier": [],
+      "eslint-plugin-import": [],
+      "eslint-plugin-jsx-a11y": [],
+      "eslint-plugin-react": [],
+      "eslint-plugin-react-hooks": [],
+      "is-port-reachable": [],
+      "jest": [],
+      "kill-port": [],
+      "npm-run-all": [],
+      "prettier": [],
+      "slug": [],
+      "supertest": [],
+      "swagger-jsdoc": [],
+      "swagger-ui-express": [],
+      "ts-jest": [],
+      "ts-node": [],
+      "tslint": [],
+      "typescript": [],
+      "wait-on": []
+    }
+  },
+  "fileMap": {
+    "fe-wtc-tech-test-e2e": [
+      {
+        "file": "apps/fe-wtc-tech-test-e2e/.eslintrc",
+        "ext": "",
+        "mtime": 1596055100968.8154
+      },
+      {
+        "file": "apps/fe-wtc-tech-test-e2e/cypress.json",
+        "ext": ".json",
+        "mtime": 1596055100968.9924
+      },
+      {
+        "file": "apps/fe-wtc-tech-test-e2e/src/fixtures/example.json",
+        "ext": ".json",
+        "mtime": 1596055100969.1643
+      },
+      {
+        "file": "apps/fe-wtc-tech-test-e2e/src/integration/app.spec.ts",
+        "ext": ".ts",
+        "mtime": 1596055100969.294
+      },
+      {
+        "file": "apps/fe-wtc-tech-test-e2e/src/integration/swagger.spec.ts",
+        "ext": ".ts",
+        "mtime": 1596055100969.468
+      },
+      {
+        "file": "apps/fe-wtc-tech-test-e2e/src/plugins/index.js",
+        "ext": ".js",
+        "mtime": 1596055100969.6125
+      },
+      {
+        "file": "apps/fe-wtc-tech-test-e2e/src/support/app.po.ts",
+        "ext": ".ts",
+        "mtime": 1596055100969.8113
+      },
+      {
+        "file": "apps/fe-wtc-tech-test-e2e/src/support/commands.ts",
+        "ext": ".ts",
+        "mtime": 1596055100969.9614
+      },
+      {
+        "file": "apps/fe-wtc-tech-test-e2e/src/support/index.ts",
+        "ext": ".ts",
+        "mtime": 1596055100970.0674
+      },
+      {
+        "file": "apps/fe-wtc-tech-test-e2e/tsconfig.e2e.json",
+        "ext": ".json",
+        "mtime": 1596055100970.1704
+      },
+      {
+        "file": "apps/fe-wtc-tech-test-e2e/tsconfig.json",
+        "ext": ".json",
+        "mtime": 1596055100970.2703
+      }
+    ],
+    "fe-wtc-tech-test": [
+      {
+        "file": "apps/fe-wtc-tech-test/.babelrc",
+        "ext": "",
+        "mtime": 1596055100970.411
+      },
+      {
+        "file": "apps/fe-wtc-tech-test/.eslintrc",
+        "ext": "",
+        "mtime": 1596055100970.5383
+      },
+      {
+        "file": "apps/fe-wtc-tech-test/app/components/footer/footer.spec.tsx",
+        "ext": ".tsx",
+        "mtime": 1596993236470
+      },
+      {
+        "file": "apps/fe-wtc-tech-test/app/components/footer/index.tsx",
+        "ext": ".tsx",
+        "mtime": 1596055100970.968
+      },
+      {
+        "file": "apps/fe-wtc-tech-test/app/components/header/header.spec.tsx",
+        "ext": ".tsx",
+        "mtime": 1596993230415
+      },
+      {
+        "file": "apps/fe-wtc-tech-test/app/components/header/index.tsx",
+        "ext": ".tsx",
+        "mtime": 1596055100971.2026
+      },
+      {
+        "file": "apps/fe-wtc-tech-test/app/components/logo/index.tsx",
+        "ext": ".tsx",
+        "mtime": 1596055100971.3474
+      },
+      {
+        "file": "apps/fe-wtc-tech-test/app/components/logo/logo.spec.tsx",
+        "ext": ".tsx",
+        "mtime": 1596993222246
+      },
+      {
+        "file": "apps/fe-wtc-tech-test/app/contentComponents/Accordion/Accordion.spec.tsx",
+        "ext": ".tsx",
+        "mtime": 1596992711744
+      },
+      {
+        "file": "apps/fe-wtc-tech-test/app/contentComponents/Accordion/Accordion.tsx",
+        "ext": ".tsx",
+        "mtime": 1596983854322.5674
+      },
+      {
+        "file": "apps/fe-wtc-tech-test/app/contentComponents/Accordion/__snapshots__/Accordion.spec.tsx.snap",
+        "ext": ".snap",
+        "mtime": 1596992729338.4434
+      },
+      {
+        "file": "apps/fe-wtc-tech-test/app/contentComponents/Card/Card.spec.tsx",
+        "ext": ".tsx",
+        "mtime": 1596994432510.628
+      },
+      {
+        "file": "apps/fe-wtc-tech-test/app/contentComponents/Card/Card.tsx",
+        "ext": ".tsx",
+        "mtime": 1610566767039.0493
+      },
+      {
+        "file": "apps/fe-wtc-tech-test/app/contentComponents/Card/CardUtills/calculateAvarageRating.spec.ts",
+        "ext": ".ts",
+        "mtime": 1596994432511.142
+      },
+      {
+        "file": "apps/fe-wtc-tech-test/app/contentComponents/Card/CardUtills/calculateAvarageRating.ts",
+        "ext": ".ts",
+        "mtime": 1596994432511.3418
+      },
+      {
+        "file": "apps/fe-wtc-tech-test/app/contentComponents/Card/IconsStateManagement/IconsStateManagement.spec.tsx",
+        "ext": ".tsx",
+        "mtime": 1596994432511.7632
+      },
+      {
+        "file": "apps/fe-wtc-tech-test/app/contentComponents/Card/IconsStateManagement/IconsStateManagement.tsx",
+        "ext": ".tsx",
+        "mtime": 1610569420469.8943
+      },
+      {
+        "file": "apps/fe-wtc-tech-test/app/contentComponents/Card/IconsStateManagement/__snapshots__/IconsStateManagement.spec.tsx.snap",
+        "ext": ".snap",
+        "mtime": 1596994432512.1821
+      },
+      {
+        "file": "apps/fe-wtc-tech-test/app/contentComponents/Card/__snapshots__/Card.spec.tsx.snap",
+        "ext": ".snap",
+        "mtime": 1596996548502.6047
+      },
+      {
+        "file": "apps/fe-wtc-tech-test/app/contentComponents/FiltersGroup/FiltersGroup.spec.tsx",
+        "ext": ".tsx",
+        "mtime": 1596992666088
+      },
+      {
+        "file": "apps/fe-wtc-tech-test/app/contentComponents/FiltersGroup/FiltersGroup.tsx",
+        "ext": ".tsx",
+        "mtime": 1610314619711.9744
+      },
+      {
+        "file": "apps/fe-wtc-tech-test/app/contentComponents/FiltersGroup/__snapshots__/FiltersGroup.spec.tsx.snap",
+        "ext": ".snap",
+        "mtime": 1596996550339.0276
+      },
+      {
+        "file": "apps/fe-wtc-tech-test/app/contentComponents/FiltersGroup/generateFilters.spec.ts",
+        "ext": ".ts",
+        "mtime": 1596992658000
+      },
+      {
+        "file": "apps/fe-wtc-tech-test/app/contentComponents/FiltersGroup/generateFilters.tsx",
+        "ext": ".tsx",
+        "mtime": 1596980157144.1653
+      },
+      {
+        "file": "apps/fe-wtc-tech-test/app/contentComponents/IconCTA/IconAction.spec.tsx",
+        "ext": ".tsx",
+        "mtime": 1596994432512.6174
+      },
+      {
+        "file": "apps/fe-wtc-tech-test/app/contentComponents/IconCTA/IconAction.tsx",
+        "ext": ".tsx",
+        "mtime": 1596994432512.8225
+      },
+      {
+        "file": "apps/fe-wtc-tech-test/app/contentComponents/IconCTA/__snapshots__/IconAction.spec.tsx.snap",
+        "ext": ".snap",
+        "mtime": 1596994432513.2554
+      },
+      {
+        "file": "apps/fe-wtc-tech-test/app/contentComponents/Input/Input.spec.tsx",
+        "ext": ".tsx",
+        "mtime": 1596992622447
+      },
+      {
+        "file": "apps/fe-wtc-tech-test/app/contentComponents/Input/Input.tsx",
+        "ext": ".tsx",
+        "mtime": 1596989383036.381
+      },
+      {
+        "file": "apps/fe-wtc-tech-test/app/contentComponents/Input/__snapshots__/Input.spec.tsx.snap",
+        "ext": ".snap",
+        "mtime": 1596992732289.8696
+      },
+      {
+        "file": "apps/fe-wtc-tech-test/app/contentComponents/RatingStarComp/Rating.spec.tsx",
+        "ext": ".tsx",
+        "mtime": 1596994432513.6323
+      },
+      {
+        "file": "apps/fe-wtc-tech-test/app/contentComponents/RatingStarComp/Rating.tsx",
+        "ext": ".tsx",
+        "mtime": 1604781626248.5947
+      },
+      {
+        "file": "apps/fe-wtc-tech-test/app/contentComponents/RatingStarComp/RatingStarUtills/ratingCalculation.spec.tsx",
+        "ext": ".tsx",
+        "mtime": 1596994432514.1404
+      },
+      {
+        "file": "apps/fe-wtc-tech-test/app/contentComponents/RatingStarComp/RatingStarUtills/ratingCalculation.tsx",
+        "ext": ".tsx",
+        "mtime": 1596994432514.3179
+      },
+      {
+        "file": "apps/fe-wtc-tech-test/app/contentComponents/RatingStarComp/__snapshots__/Rating.spec.tsx.snap",
+        "ext": ".snap",
+        "mtime": 1596994432514.53
+      },
+      {
+        "file": "apps/fe-wtc-tech-test/app/index.ts",
+        "ext": ".ts",
+        "mtime": 1596055100971.5535
+      },
+      {
+        "file": "apps/fe-wtc-tech-test/app/services/apiService.spec.ts",
+        "ext": ".ts",
+        "mtime": 1596994016066.1865
+      },
+      {
+        "file": "apps/fe-wtc-tech-test/app/services/apiService.ts",
+        "ext": ".ts",
+        "mtime": 1596994016066.5857
+      },
+      {
+        "file": "apps/fe-wtc-tech-test/app/services/utils/ENV.ts",
+        "ext": ".ts",
+        "mtime": 1596994016066.8499
+      },
+      {
+        "file": "apps/fe-wtc-tech-test/app/theme/theme.spec.tsx",
+        "ext": ".tsx",
+        "mtime": 1596993304422
+      },
+      {
+        "file": "apps/fe-wtc-tech-test/app/theme/theme.ts",
+        "ext": ".ts",
+        "mtime": 1596055100971.8887
+      },
+      {
+        "file": "apps/fe-wtc-tech-test/index.d.ts",
+        "ext": ".ts",
+        "mtime": 1596055100971.9934
+      },
+      {
+        "file": "apps/fe-wtc-tech-test/jest.config.js",
+        "ext": ".js",
+        "mtime": 1596383050295.1738
+      },
+      {
+        "file": "apps/fe-wtc-tech-test/next-env.d.ts",
+        "ext": ".ts",
+        "mtime": 1596055100972.2131
+      },
+      {
+        "file": "apps/fe-wtc-tech-test/next.config.js",
+        "ext": ".js",
+        "mtime": 1596055100972.307
+      },
+      {
+        "file": "apps/fe-wtc-tech-test/pages/_app.tsx",
+        "ext": ".tsx",
+        "mtime": 1596055100972.4417
+      },
+      {
+        "file": "apps/fe-wtc-tech-test/pages/_document.tsx",
+        "ext": ".tsx",
+        "mtime": 1596055100972.6003
+      },
+      {
+        "file": "apps/fe-wtc-tech-test/pages/index.spec.tsx",
+        "ext": ".tsx",
+        "mtime": 1596994016078.5603
+      },
+      {
+        "file": "apps/fe-wtc-tech-test/pages/index.tsx",
+        "ext": ".tsx",
+        "mtime": 1596994016078.8235
+      },
+      {
+        "file": "apps/fe-wtc-tech-test/pages/instructions/index.tsx",
+        "ext": ".tsx",
+        "mtime": 1596055100973.0464
+      },
+      {
+        "file": "apps/fe-wtc-tech-test/pages/instructions/instructions.spec.tsx",
+        "ext": ".tsx",
+        "mtime": 1596993292637
+      },
+      {
+        "file": "apps/fe-wtc-tech-test/proxy.conf.json",
+        "ext": ".json",
+        "mtime": 1596055100973.4478
+      },
+      {
+        "file": "apps/fe-wtc-tech-test/public/assets/design/fe_movies_tech_test.pdf",
+        "ext": ".pdf",
+        "mtime": 1596055100992.0786
+      },
+      {
+        "file": "apps/fe-wtc-tech-test/public/assets/design/fe_movies_tech_test.sketch",
+        "ext": ".sketch",
+        "mtime": 1596055101004.9453
+      },
+      {
+        "file": "apps/fe-wtc-tech-test/public/assets/logo/testflix_logo.png",
+        "ext": ".png",
+        "mtime": 1596055101006.1687
+      },
+      {
+        "file": "apps/fe-wtc-tech-test/public/favicon.ico",
+        "ext": ".ico",
+        "mtime": 1596055101006.4446
+      },
+      {
+        "file": "apps/fe-wtc-tech-test/tsconfig.json",
+        "ext": ".json",
+        "mtime": 1596626345683.8535
+      },
+      {
+        "file": "apps/fe-wtc-tech-test/tsconfig.spec.json",
+        "ext": ".json",
+        "mtime": 1596055101006.866
+      }
+    ],
+    "ui-e2e": [
+      {
+        "file": "apps/ui-e2e/.eslintrc",
+        "ext": "",
+        "mtime": 1596055101007.0059
+      },
+      {
+        "file": "apps/ui-e2e/cypress.json",
+        "ext": ".json",
+        "mtime": 1596055101007.1099
+      },
+      {
+        "file": "apps/ui-e2e/src/fixtures/example.json",
+        "ext": ".json",
+        "mtime": 1596055101007.366
+      },
+      {
+        "file": "apps/ui-e2e/src/integration/button/button.spec.ts",
+        "ext": ".ts",
+        "mtime": 1596055101007.5696
+      },
+      {
+        "file": "apps/ui-e2e/src/integration/buttonLink/buttonLink.spec.ts",
+        "ext": ".ts",
+        "mtime": 1596055101007.72
+      },
+      {
+        "file": "apps/ui-e2e/src/integration/grid/grid.spec.ts",
+        "ext": ".ts",
+        "mtime": 1596055101007.847
+      },
+      {
+        "file": "apps/ui-e2e/src/integration/index/index.spec.ts",
+        "ext": ".ts",
+        "mtime": 1596055101007.9746
+      },
+      {
+        "file": "apps/ui-e2e/src/plugins/index.js",
+        "ext": ".js",
+        "mtime": 1596055101008.17
+      },
+      {
+        "file": "apps/ui-e2e/src/support/commands.ts",
+        "ext": ".ts",
+        "mtime": 1596055101008.4045
+      },
+      {
+        "file": "apps/ui-e2e/src/support/index.ts",
+        "ext": ".ts",
+        "mtime": 1596055101008.6934
+      },
+      {
+        "file": "apps/ui-e2e/tsconfig.e2e.json",
+        "ext": ".json",
+        "mtime": 1596055101008.9114
+      },
+      {
+        "file": "apps/ui-e2e/tsconfig.json",
+        "ext": ".json",
+        "mtime": 1596055101009.1465
+      }
+    ],
+    "api": [
+      {
+        "file": "apps/api/.eslintrc",
+        "ext": "",
+        "mtime": 1596055100962.9229
+      },
+      {
+        "file": "apps/api/jest.config.js",
+        "ext": ".js",
+        "mtime": 1596055100963.1008
+      },
+      {
+        "file": "apps/api/src/app/routes/actors/actors.spec.ts",
+        "ext": ".ts",
+        "mtime": 1596055100963.543
+      },
+      {
+        "file": "apps/api/src/app/routes/actors/index.ts",
+        "ext": ".ts",
+        "mtime": 1596055100963.689
+      },
+      {
+        "file": "apps/api/src/app/routes/directors/directors.spec.ts",
+        "ext": ".ts",
+        "mtime": 1596055100963.841
+      },
+      {
+        "file": "apps/api/src/app/routes/directors/index.ts",
+        "ext": ".ts",
+        "mtime": 1596055100963.9453
+      },
+      {
+        "file": "apps/api/src/app/routes/facetView/facetActors/facetActors.spec.ts",
+        "ext": ".ts",
+        "mtime": 1596055100964.2993
+      },
+      {
+        "file": "apps/api/src/app/routes/facetView/facetActors/index.ts",
+        "ext": ".ts",
+        "mtime": 1596055100964.4375
+      },
+      {
+        "file": "apps/api/src/app/routes/facetView/facetDirectors/facetDirectors.spec.ts",
+        "ext": ".ts",
+        "mtime": 1596055100964.611
+      },
+      {
+        "file": "apps/api/src/app/routes/facetView/facetDirectors/index.ts",
+        "ext": ".ts",
+        "mtime": 1596055100964.6982
+      },
+      {
+        "file": "apps/api/src/app/routes/facetView/facetMovies/facetMovies.spec.ts",
+        "ext": ".ts",
+        "mtime": 1596055100964.8433
+      },
+      {
+        "file": "apps/api/src/app/routes/facetView/facetMovies/index.ts",
+        "ext": ".ts",
+        "mtime": 1596055100964.9595
+      },
+      {
+        "file": "apps/api/src/app/routes/facetView/facetView.spec.ts",
+        "ext": ".ts",
+        "mtime": 1596055100965.073
+      },
+      {
+        "file": "apps/api/src/app/routes/facetView/index.ts",
+        "ext": ".ts",
+        "mtime": 1596055100965.1958
+      },
+      {
+        "file": "apps/api/src/app/routes/facetView/utils/index.ts",
+        "ext": ".ts",
+        "mtime": 1596055100965.466
+      },
+      {
+        "file": "apps/api/src/app/routes/index.ts",
+        "ext": ".ts",
+        "mtime": 1596055100965.5718
+      },
+      {
+        "file": "apps/api/src/app/routes/movies/index.ts",
+        "ext": ".ts",
+        "mtime": 1596055100965.7476
+      },
+      {
+        "file": "apps/api/src/app/routes/movies/movies.spec.ts",
+        "ext": ".ts",
+        "mtime": 1596055100966.03
+      },
+      {
+        "file": "apps/api/src/assets/.gitkeep",
+        "ext": "",
+        "mtime": 1596055100966.1501
+      },
+      {
+        "file": "apps/api/src/assets/list.ts",
+        "ext": ".ts",
+        "mtime": 1596055100966.3313
+      },
+      {
+        "file": "apps/api/src/constants.ts",
+        "ext": ".ts",
+        "mtime": 1596055100966.4758
+      },
+      {
+        "file": "apps/api/src/environments/environment.prod.ts",
+        "ext": ".ts",
+        "mtime": 1596055100966.6606
+      },
+      {
+        "file": "apps/api/src/environments/environment.ts",
+        "ext": ".ts",
+        "mtime": 1596055100966.7988
+      },
+      {
+        "file": "apps/api/src/main.ts",
+        "ext": ".ts",
+        "mtime": 1610307179006.2415
+      },
+      {
+        "file": "apps/api/src/utils/.gitkeep",
+        "ext": "",
+        "mtime": 1596055100967.0703
+      },
+      {
+        "file": "apps/api/src/utils/convertStrToArr/index.ts",
+        "ext": ".ts",
+        "mtime": 1596055100967.1565
+      },
+      {
+        "file": "apps/api/src/utils/filterEmptyString/filterEmptyString.spec.ts",
+        "ext": ".ts",
+        "mtime": 1596055100967.278
+      },
+      {
+        "file": "apps/api/src/utils/filterEmptyString/index.ts",
+        "ext": ".ts",
+        "mtime": 1596055100967.3735
+      },
+      {
+        "file": "apps/api/src/utils/getMapOf/getMapOf.spec.ts",
+        "ext": ".ts",
+        "mtime": 1596055100967.732
+      },
+      {
+        "file": "apps/api/src/utils/getMapOf/index.ts",
+        "ext": ".ts",
+        "mtime": 1596055100967.8936
+      },
+      {
+        "file": "apps/api/src/utils/index.ts",
+        "ext": ".ts",
+        "mtime": 1596055100967.985
+      },
+      {
+        "file": "apps/api/src/utils/transformMapIntoArrayOf/index.ts",
+        "ext": ".ts",
+        "mtime": 1596055100968.121
+      },
+      {
+        "file": "apps/api/src/utils/transformMapIntoArrayOf/transformMapIntoArrayOf.spec.ts",
+        "ext": ".ts",
+        "mtime": 1596055100968.223
+      },
+      {
+        "file": "apps/api/tsconfig.app.json",
+        "ext": ".json",
+        "mtime": 1596055100968.3186
+      },
+      {
+        "file": "apps/api/tsconfig.json",
+        "ext": ".json",
+        "mtime": 1596055100968.452
+      },
+      {
+        "file": "apps/api/tsconfig.spec.json",
+        "ext": ".json",
+        "mtime": 1596055100968.5723
+      }
+    ],
+    "ui": [
+      {
+        "file": "libs/ui/.eslintrc",
+        "ext": "",
+        "mtime": 1596055101009.5637
+      },
+      {
+        "file": "libs/ui/.storybook/addons.js",
+        "ext": ".js",
+        "mtime": 1596055101009.7842
+      },
+      {
+        "file": "libs/ui/.storybook/config.js",
+        "ext": ".js",
+        "mtime": 1596055101009.9316
+      },
+      {
+        "file": "libs/ui/.storybook/tsconfig.json",
+        "ext": ".json",
+        "mtime": 1596055101010.071
+      },
+      {
+        "file": "libs/ui/.storybook/webpack.config.js",
+        "ext": ".js",
+        "mtime": 1596055101010.1963
+      },
+      {
+        "file": "libs/ui/README.md",
+        "ext": ".md",
+        "mtime": 1596055101010.3362
+      },
+      {
+        "file": "libs/ui/jest.config.js",
+        "ext": ".js",
+        "mtime": 1596055101010.4353
+      },
+      {
+        "file": "libs/ui/src/index.ts",
+        "ext": ".ts",
+        "mtime": 1596055101010.6052
+      },
+      {
+        "file": "libs/ui/src/lib/Counter/counter.spec.tsx",
+        "ext": ".tsx",
+        "mtime": 1596055101010.938
+      },
+      {
+        "file": "libs/ui/src/lib/Counter/counter.stories.tsx",
+        "ext": ".tsx",
+        "mtime": 1596055101011.0508
+      },
+      {
+        "file": "libs/ui/src/lib/Counter/counter.tsx",
+        "ext": ".tsx",
+        "mtime": 1596055101011.1743
+      },
+      {
+        "file": "libs/ui/src/lib/button/button.spec.tsx",
+        "ext": ".tsx",
+        "mtime": 1596055101011.3613
+      },
+      {
+        "file": "libs/ui/src/lib/button/button.stories.tsx",
+        "ext": ".tsx",
+        "mtime": 1596055101011.4998
+      },
+      {
+        "file": "libs/ui/src/lib/button/button.tsx",
+        "ext": ".tsx",
+        "mtime": 1596055101011.5977
+      },
+      {
+        "file": "libs/ui/src/lib/buttonLink/buttonLink.spec.tsx",
+        "ext": ".tsx",
+        "mtime": 1596055101011.823
+      },
+      {
+        "file": "libs/ui/src/lib/buttonLink/buttonLink.stories.tsx",
+        "ext": ".tsx",
+        "mtime": 1596055101012.0342
+      },
+      {
+        "file": "libs/ui/src/lib/buttonLink/buttonLink.tsx",
+        "ext": ".tsx",
+        "mtime": 1596055101012.1804
+      },
+      {
+        "file": "libs/ui/src/lib/detailsBox/detailsBox.spec.tsx",
+        "ext": ".tsx",
+        "mtime": 1596055101012.356
+      },
+      {
+        "file": "libs/ui/src/lib/detailsBox/index.stories.tsx",
+        "ext": ".tsx",
+        "mtime": 1596055101012.4854
+      },
+      {
+        "file": "libs/ui/src/lib/detailsBox/index.tsx",
+        "ext": ".tsx",
+        "mtime": 1596055101012.6257
+      },
+      {
+        "file": "libs/ui/src/lib/grid/grid.spec.tsx",
+        "ext": ".tsx",
+        "mtime": 1596055101012.7815
+      },
+      {
+        "file": "libs/ui/src/lib/grid/grid.stories.tsx",
+        "ext": ".tsx",
+        "mtime": 1596055101012.9004
+      },
+      {
+        "file": "libs/ui/src/lib/grid/grid.tsx",
+        "ext": ".tsx",
+        "mtime": 1596055101013.0137
+      },
+      {
+        "file": "libs/ui/src/lib/icons/icons.spec.tsx",
+        "ext": ".tsx",
+        "mtime": 1596055101013.1611
+      },
+      {
+        "file": "libs/ui/src/lib/icons/icons.tsx",
+        "ext": ".tsx",
+        "mtime": 1596055101013.2654
+      },
+      {
+        "file": "libs/ui/src/lib/progress/progress.spec.tsx",
+        "ext": ".tsx",
+        "mtime": 1596055101013.403
+      },
+      {
+        "file": "libs/ui/src/lib/progress/progress.tsx",
+        "ext": ".tsx",
+        "mtime": 1596055101013.5115
+      },
+      {
+        "file": "libs/ui/tsconfig.json",
+        "ext": ".json",
+        "mtime": 1596055101013.6074
+      },
+      {
+        "file": "libs/ui/tsconfig.lib.json",
+        "ext": ".json",
+        "mtime": 1596055101013.6934
+      },
+      {
+        "file": "libs/ui/tsconfig.spec.json",
+        "ext": ".json",
+        "mtime": 1596055101013.7817
+      }
+    ]
+  }
+}

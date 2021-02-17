@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render correclty with initial props should render and take a snapshot 1`] = `
+<DocumentFragment>
+  <form
+    class="formTask"
+  >
+    <input
+      class="text"
+      placeholder="Get some eggs..."
+      required=""
+      type="text"
+      value=""
+    />
+    <input
+      type="submit"
+      value="ADD"
+    />
+  </form>
+</DocumentFragment>
+`;
