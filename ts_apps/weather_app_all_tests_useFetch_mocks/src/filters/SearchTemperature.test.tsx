@@ -41,17 +41,20 @@ describe('events', () => {
   })
   describe('on submit temperature form', () => {
     it('should submit search but abort submit when filterInput is empty', () => {
-      const { container } = render(<SearchTemperature filterCallback={() => { }} />);
-      const { filterInput, buttonSubmit } = getFormElements(container)
+      const filterCallbackMock = jest.fn()
+      const { container } = render(<SearchTemperature filterCallback={filterCallbackMock} />);
+      const { buttonSubmit } = getFormElements(container)
       Simulate.click(buttonSubmit)
-      expect(filterInput.value).toBe('')
+      expect(filterCallbackMock).not.toHaveBeenCalled()
     })
-    it('should submit search with the filterInput value', () => {
-      const { container } = render(<SearchTemperature filterCallback={() => { }} />);
+    it('should submit search with calling callback method', () => {
+      const filterCallbackMock = jest.fn()
+      const { container } = render(<SearchTemperature filterCallback={filterCallbackMock} />);
       const { filterInput, buttonSubmit } = getFormElements(container)
       filterInput.value = '30'
       Simulate.click(buttonSubmit)
-      expect(filterInput.value).toBe('30')
+      expect(filterCallbackMock).toHaveBeenCalledWith(['min', 30])
+
     })
   })
 })
