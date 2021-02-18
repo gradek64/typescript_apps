@@ -67,7 +67,7 @@ const MultipleLocations = () => {
                   <p>{getDateFormat(datetime, 'day')}</p>
                   <p>{getDateFormat(datetime, 'dateNumber')} {getDateFormat(datetime, 'month')}</p>
                   <span className="icon-alone" aria-hidden="true" data-icon="&#x231a;"></span>
-                  <p>{temp}<span className='metric'>°C</span></p>
+                  <p className='temperature'>{temp}<span className='metric'>°C</span></p>
                   <p>{weather.description}</p>
                 </div>
               )}

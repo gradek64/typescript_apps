@@ -31,10 +31,10 @@ const SearchTemperature = ({ filterCallback }: IProps) => {
       <input name='search' type="number" ref={inputSearchRef}></input>
       <div className='minMaxContainer'>
         <label htmlFor="max">min
-        <input name='max' type="radio" checked={minOrMax === 'min'} onChange={onChangeMinMax} value="min" />
+        <input name='min' type="radio" checked={minOrMax === 'min'} onChange={onChangeMinMax} value="min" />
         </label>
         <label htmlFor="min">max
-        <input name='min' type="radio" checked={minOrMax === 'max'} onChange={onChangeMinMax} value="max" />
+        <input name='max' type="radio" checked={minOrMax === 'max'} onChange={onChangeMinMax} value="max" />
         </label>
       </div>
       <button id='submit' onClick={submitChange} >Search</button>

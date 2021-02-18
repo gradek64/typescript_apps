@@ -16,55 +16,72 @@ export const useFetch = ({url,locations}:{url:string,locations?:{[key:string]:an
 
 
   useEffect(() => {
-   
+
+    const abortController = new AbortController()
+    const signal = abortController.signal
+
+    let isCancelled = false;
       const callApi = async () => {
         try {
-          isLoading(true);
-          let responseData:WeatherResponse[] | null
-          const locationsObject = locationsJsonString && JSON!.parse(locationsJsonString);
+              if(!isCancelled){
+                isLoading(true);
+                let responseData:WeatherResponse[] | null
+                const locationsObject = locationsJsonString && JSON!.parse(locationsJsonString);
 
-          //multiple locations
-          if(locationsObject){
-              const cities = Object.keys(locationsObject)
-              const locationResponses =  cities!.map(
-                async (city) => {
-                  const fetchUrl = useMock ? `./mockDataMultipleLocations_${city}.json` : `${url}?lat=${locationsObject[city].lat}&lon=${locationsObject[city].lon}`
-                  const dataBack = await fetch(fetchUrl, {
-                        "method": "GET",
-                        "headers": headers,
+                //multiple locations
+                if(locationsObject){
+                    const cities = Object.keys(locationsObject)
+                    const locationResponses =  cities!.map(
+                      async (city) => {
+                        const fetchUrl = useMock ? `./mockDataMultipleLocations_${city}.json` : `${url}?lat=${locationsObject[city].lat}&lon=${locationsObject[city].lon}`
+                        
+                        const dataBack = await fetch(fetchUrl, {
+                              "method": "GET",
+                              "headers": headers,
+                              signal,
+                          })
+                      const dataBackJson = await dataBack.json()    
+                      return dataBackJson
                     })
-                const dataBackJson = await dataBack.json()    
-                return dataBackJson
-              })
-              responseData =  await Promise.all(locationResponses)
-                //check for service provider errors
-                const error = responseData.some(({message})=>message)
-                !error ? setData(responseData) : setData(null)
-                error ? setError(error) : setError(null)
-                isLoading(false);   
-          } 
+                    responseData =  await Promise.all(locationResponses)
+                      //check for service provider errors
+                      const error = responseData.some(({message})=>message)
+                      !error ? setData(responseData) : setData(null)
+                      error ? setError(error) : setError(null)
+                      isLoading(false);   
+                } 
 
-          //single location
-          if(!locationsObject){
-          //create react app server only serve static files from ./public
-          //otherwise the response comes as Readable string not good;)
-          const fetchUrl = useMock ? './mockDataCurrentWeather.json' : url
-         const dataBack:any = await fetch(fetchUrl,{headers})
-         const singleLocation = await dataBack.json()
-         //server error responses  
-         responseData = singleLocation.data 
-          responseData ? setData(responseData) : setData(null)
-          responseData ? setError(null) : setError('error')  
-          isLoading(false);
-          }          
-         
-        }
+                //single location
+                if(!locationsObject){
+                //create react app server only serve static files from ./public
+                //otherwise the response comes as Readable string not good;)
+                const fetchUrl = useMock ? './mockDataCurrentWeather.json' : url
+              const dataBack:any = await fetch(fetchUrl,{headers})
+              const singleLocation = await dataBack.json()
+              //server error responses  
+              responseData = singleLocation.data 
+                responseData ? setData(responseData) : setData(null)
+                responseData ? setError(null) : setError('error')  
+                isLoading(false);
+                }          
+              
+              }
+             }
         catch (error:any) {
-          isLoading(false);
-          setError(error) 
+          if(!isCancelled){
+
+            abortController.abort()
+            isLoading(false);
+            setError(error) 
+          }
         }
         } 
       callApi()
+
+      //clean up function 
+      return function cleanup(){
+        isCancelled = true;
+      }
     //has to be converted to string because of nested object comparison
   },[locationsJsonString,url])
 
