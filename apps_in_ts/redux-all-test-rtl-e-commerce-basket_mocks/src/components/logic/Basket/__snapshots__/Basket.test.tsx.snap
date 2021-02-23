@@ -1,0 +1,100 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render renders with 1 item inside 1`] = `
+<DocumentFragment>
+  <div
+    class="basket-container"
+  >
+    <div
+      class="basket"
+    >
+      <h2>
+        Order Summary
+      </h2>
+      <div
+        class="table-row frame"
+      >
+        <div>
+          Product
+        </div>
+        <div>
+          Quantity
+        </div>
+        <div>
+          purchase more
+        </div>
+        <div>
+          remove Item
+        </div>
+        <div>
+          unit price
+        </div>
+      </div>
+      <div
+        class="table-row"
+      >
+        <div>
+          Russell Hobbs Pennine Illuminating S Steel Kettle 20444
+        </div>
+        <div>
+          1
+        </div>
+        <div>
+          <select>
+            <option
+              value="1"
+            >
+              1
+            </option>
+            <option
+              value="2"
+            >
+              2
+            </option>
+            <option
+              value="3"
+            >
+              3
+            </option>
+            <option
+              value="4"
+            >
+              4
+            </option>
+            <option
+              value="5"
+            >
+              5
+            </option>
+          </select>
+        </div>
+        <div>
+          <input
+            class="simple-button"
+            type="button"
+            value="remove"
+          />
+        </div>
+        <div>
+          £ 24.99
+        </div>
+      </div>
+      <div
+        class="table-row frame total"
+      >
+        <div>
+          total
+        </div>
+        <div />
+        <div />
+        <div />
+        <div
+          class="total"
+        >
+          £ 24.99
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

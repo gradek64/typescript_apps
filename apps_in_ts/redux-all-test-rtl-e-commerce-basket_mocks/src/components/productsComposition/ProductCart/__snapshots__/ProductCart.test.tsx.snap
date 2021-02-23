@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render renders correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="productCart"
+  >
+    <h6
+      class="display-title"
+    >
+      Russell Hobbs Pennine Illuminating S Steel Kettle 20444
+    </h6>
+    <div
+      class="display-image"
+    >
+      <img
+        alt="productRussell Hobbs Pennine Illuminating S Steel Kettle 20444"
+        src="https://media.4rgos.it/s/d/9805244_R_SET?w=110&h=130"
+      />
+    </div>
+    <div
+      class="display-price"
+    >
+      £ 24.99
+    </div>
+    <input
+      class="simple-button"
+      type="button"
+      value="add to Cart"
+    />
+  </div>
+</DocumentFragment>
+`;

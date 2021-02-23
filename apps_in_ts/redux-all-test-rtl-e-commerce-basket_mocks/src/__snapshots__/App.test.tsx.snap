@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`@render App has loaded data 1`] = `
+<DocumentFragment>
+  <header>
+    <h2>
+      Top Seller
+    </h2>
+  </header>
+  <nav>
+    <div
+      class="basket-icon sticky"
+    >
+      <button
+        class="no-pointer"
+        disabled=""
+        role="link"
+      >
+        <img
+          alt="open basket"
+          src="/images/shopping-cart-3.svg"
+        />
+      </button>
+    </div>
+  </nav>
+  <div
+    class="modal"
+    role="presentation"
+    style="display: none;"
+    tabindex="0"
+  >
+    <div
+      class="modal-content"
+    >
+      <div
+        class="basket-empty"
+      >
+        Your basket is empty
+      </div>
+    </div>
+  </div>
+  <div
+    class="products-list"
+  >
+    loading......loading
+  </div>
+</DocumentFragment>
+`;

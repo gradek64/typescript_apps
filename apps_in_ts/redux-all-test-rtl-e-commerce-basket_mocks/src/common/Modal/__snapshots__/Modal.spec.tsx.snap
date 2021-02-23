@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render opens a modal 1`] = `
+<DocumentFragment>
+  <div
+    class="modal"
+    role="presentation"
+    style="display: flex;"
+    tabindex="-1"
+  >
+    <div
+      class="modal-content"
+    >
+      <p>
+        modal content
+      </p>
+    </div>
+  </div>
+</DocumentFragment>
+`;
