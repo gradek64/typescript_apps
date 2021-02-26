@@ -13,14 +13,12 @@ const ProductsList = () => {
     <div className="products-list">
       {loading && !data && 'loading...'}
       {error && !data && 'something gone wrong refresh a page'}
-      {data
-        ? data!.map((props, i) => (
-          <ProductCartStore
-            {...props}
-            key={`item'${i}`}
-          />
-        ))
-        : '...loading'}
+      {data && data!.map((props, i) => (
+        <ProductCartStore
+          {...props}
+          key={`item'${i}`}
+        />
+      ))}
     </div>
   );
 }

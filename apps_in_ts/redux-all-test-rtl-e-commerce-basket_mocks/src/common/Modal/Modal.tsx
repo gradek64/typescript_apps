@@ -16,7 +16,11 @@ const Modal = ({ eventOn, children }: IProps) => {
 
   useEffect(() => {
     setDidMount(true);
-    return () => setDidMount(false);
+    return () => {
+      //cancel events for Modal ID on componentWillUnmount
+      dispatchEvent.cancel(eventOn)
+      setDidMount(false)
+    };
   }, [])
 
   if (!didMount) {
@@ -40,8 +44,10 @@ const Modal = ({ eventOn, children }: IProps) => {
     openState(false);
   };
 
-  //register event with custom event
-  dispatchEvent.on(eventOn, openModal);
+  //register event with custom event if not defined yet
+  if (!dispatchEvent.events[eventOn]) {
+    dispatchEvent.on(eventOn, openModal);
+  }
 
   return (
     <React.Fragment>

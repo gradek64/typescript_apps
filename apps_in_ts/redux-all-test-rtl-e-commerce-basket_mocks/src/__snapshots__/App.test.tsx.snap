@@ -42,7 +42,7 @@ exports[`@render App has loaded data 1`] = `
   <div
     class="products-list"
   >
-    loading......loading
+    loading...
   </div>
 </DocumentFragment>
 `;

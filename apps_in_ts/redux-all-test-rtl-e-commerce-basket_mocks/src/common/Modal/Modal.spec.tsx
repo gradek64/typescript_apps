@@ -29,6 +29,20 @@ describe('render', () => {
   });
 });
 
+describe('reacts to custom events', () => {
+  afterEach(cleanup)
+  it('should register event with ID to open the modal', () => {
+    render(<Modal {...props} />);
+    openModalWithCustomEvent()
+    expect(dispatchEvent.events[props.eventOn]![0]!.name).toBe('openModal')
+  })
+  it('should cancel event by event ID', () => {
+    const { unmount } = render(<Modal {...props} />);
+    unmount()
+    expect(dispatchEvent.events[props.eventOn]).toEqual(null)
+  })
+})
+
 describe('events', () => {
   describe('click on modal content and modal body', () => {
     it('should close modal when click outside the content', () => {
@@ -39,6 +53,7 @@ describe('events', () => {
       const computedStyle = window.getComputedStyle(modalBody!, null);
       const { _values } = computedStyle as any
       expect(_values.display).toBe('none')
+
     })
     it('should NOT close modal when click inside the modal content', () => {
       const { container } = render(<Modal {...props} />);
@@ -51,6 +66,7 @@ describe('events', () => {
       expect(_values.display).toBe('flex')
     })
   })
+
   describe('press on ESC key', () => {
     it('should close modal when ESCAPE key press', () => {
       const { container } = render(<Modal {...props} />);

@@ -5,7 +5,7 @@ exports[`render renders correctly 1`] = `
   <div
     class="products-list"
   >
-    loading......loading
+    loading...
   </div>
 </DocumentFragment>
 `;
