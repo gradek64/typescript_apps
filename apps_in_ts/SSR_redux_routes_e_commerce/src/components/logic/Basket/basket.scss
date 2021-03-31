@@ -1,0 +1,56 @@
+.basket-container {
+  overflow: hidden;
+
+  .basket {
+    display: table;
+    border-collapse: collapse;
+    overflow: scroll;
+    margin: 0 auto;
+    width: 98%;
+
+    h2 {
+      display: block;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .frame {
+      border: 1px solid orange;
+    }
+
+    .total {
+      font-size: 1.3rem;
+      color: red;
+      white-space: nowrap;
+    }
+
+    .table-row {
+      display: table-row;
+      border-collapse: collapse;
+
+      div {
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+        padding: 1rem;
+      }
+
+      select {
+        zoom: 1.4;
+      }
+    }
+  }
+}
+.basket-empty {
+  font-size: 2rem;
+  padding: 4rem;
+  color: green;
+  text-align: center;
+}
+
+@media only screen and (max-width: 1000px) {
+  .basket-container {
+    overflow-y: hidden;
+    overflow-x: scroll;
+  }
+}

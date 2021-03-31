@@ -1,0 +1,39 @@
+.basket-icon {
+  position: relative;
+  width: 5rem;
+  margin: 2rem;
+  padding: 10px;
+  cursor: default;
+
+  button {
+    border: none;
+    width: 80px;
+    background-color: transparent;
+
+    &.pointer {
+      cursor: pointer;
+    }
+
+    &.no-pointer {
+      cursor: default;
+    }
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  .inBasket {
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    text-align: center;
+    line-height: 2rem;
+    border-radius: 50%;
+    background-color: green;
+    font-weight: bold;
+    top: 1rem;
+    right: -0.5rem;
+  }
+}
